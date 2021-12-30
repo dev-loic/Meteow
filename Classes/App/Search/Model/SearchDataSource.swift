@@ -47,4 +47,8 @@ extension SearchDataSource: UITableViewDataSource {
 extension SearchDataSource: UITableViewDelegate {
     
     // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48.0
+    }
 }
