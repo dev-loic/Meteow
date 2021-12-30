@@ -36,4 +36,8 @@ class SearchPresenterImplementation: SearchPresenter {
     func clearSearch() {
         viewContract?.display(mapper.map(from: []))
     }
+    
+    func selectCity(at index: Int) {
+        // TODO: (Loic Saillant) 2021/12/30 To implement
+    }
 }

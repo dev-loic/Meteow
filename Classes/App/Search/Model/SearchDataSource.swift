@@ -9,7 +9,7 @@ import Foundation
 import ADUtils
 
 protocol SearchDataSourceDelegate: AnyObject {
-    // TODO: (Loic Saillant) 2021/12/30 To complete
+    func searchDataSource(_ dataSource: SearchDataSource, didSelectCityAt index: Int)
 }
 
 class SearchDataSource: NSObject {
@@ -50,5 +50,9 @@ extension SearchDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 48.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.searchDataSource(self, didSelectCityAt: indexPath.row)
     }
 }

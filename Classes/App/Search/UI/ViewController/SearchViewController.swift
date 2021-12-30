@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, Alertable {
     
     var presenter: SearchPresenter?
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -59,6 +59,14 @@ extension SearchViewController: SearchViewContract {
 extension SearchViewController: SearchDataSourceDelegate {
     
     // MARK: - SearchDataSourceDelegate
+    
+    func searchDataSource(_ dataSource: SearchDataSource, didSelectCityAt index: Int) {
+        let alertViewModel = AlertViewModel(title: "search_add_favorite_title".localized())
+        presentAlert(.cancelable(alertViewModel)) { [weak self] actionType in
+            guard actionType == .confirm else { return }
+            self?.presenter?.selectCity(at: index)
+        }
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
