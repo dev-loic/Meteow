@@ -16,3 +16,7 @@
 
 // Settings
 "tab_settings_title" = "Settings";
+
+// Alert
+"alert_cancel_button_title" = "Cancel";
+"alert_confirm_button_title" = "Confirm";

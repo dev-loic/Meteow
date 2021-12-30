@@ -24,6 +24,8 @@
 		26C0E746277DC62B00EC78DE /* SearchResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E745277DC62B00EC78DE /* SearchResultsData.swift */; };
 		26C0E749277DC6E900EC78DE /* SearchRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E748277DC6E900EC78DE /* SearchRepositoryImplementation.swift */; };
 		26C0E74E277DF89200EC78DE /* TargetSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E74D277DF89100EC78DE /* TargetSettings.swift */; };
+		26C0E756277E0DAF00EC78DE /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E755277E0DAE00EC78DE /* AlertViewModel.swift */; };
+		26C0E758277E0F1000EC78DE /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E757277E0F1000EC78DE /* Alertable.swift */; };
 		29F715ACEB0E4EF18BF6EF80 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318EED504FB10DBC465551 /* CityViewController.swift */; };
 		32DEC465DF9A74917F7DBF15 /* SearchViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E449C89F500CA7A1D08CBAAF /* SearchViewContract.swift */; };
 		4C2F91319C8869C64B10224C /* CityPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */; };
@@ -55,6 +57,8 @@
 		26C0E745277DC62B00EC78DE /* SearchResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsData.swift; sourceTree = "<group>"; };
 		26C0E748277DC6E900EC78DE /* SearchRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryImplementation.swift; sourceTree = "<group>"; };
 		26C0E74D277DF89100EC78DE /* TargetSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettings.swift; sourceTree = "<group>"; };
+		26C0E755277E0DAE00EC78DE /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		26C0E757277E0F1000EC78DE /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityPresenterImplementation.swift; sourceTree = "<group>"; };
 		2C929E551A5208A091972A12 /* CityViewContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityViewContract.swift; sourceTree = "<group>"; };
 		31E7E96DEA9A07E7B3251E05 /* SettingsPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenterImplementation.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		269FBC31277DA4C80024E3C1 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				26C0E753277E0D8500EC78DE /* Shared */,
 				996DF2B7235CE8BC0ABCB1C8 /* Search */,
 				8ADA971214BDEF5B063B2284 /* City */,
 				3A2674190B7F421ED4708200 /* Settings */,
@@ -265,6 +270,23 @@
 				26C0E74D277DF89100EC78DE /* TargetSettings.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		26C0E753277E0D8500EC78DE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E754277E0DA200EC78DE /* Alert */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		26C0E754277E0DA200EC78DE /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E755277E0DAE00EC78DE /* AlertViewModel.swift */,
+				26C0E757277E0F1000EC78DE /* Alertable.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		299C345D87352B8C45137172 /* UI */ = {
@@ -545,7 +567,9 @@
 				6A843CB26B619A76818C0A82 /* SearchViewController.swift in Sources */,
 				147F1D4B44C8CF57BBE88646 /* SearchPresenter.swift in Sources */,
 				26C0E74E277DF89200EC78DE /* TargetSettings.swift in Sources */,
+				26C0E758277E0F1000EC78DE /* Alertable.swift in Sources */,
 				AAA16D92C03B99BB7B8EF8BD /* SearchPresenterImplementation.swift in Sources */,
+				26C0E756277E0DAF00EC78DE /* AlertViewModel.swift in Sources */,
 				FC2D0610FAFA09D0FA46483E /* CityViewContract.swift in Sources */,
 				29F715ACEB0E4EF18BF6EF80 /* CityViewController.swift in Sources */,
 				26C0E746277DC62B00EC78DE /* SearchResultsData.swift in Sources */,
