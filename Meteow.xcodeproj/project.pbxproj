@@ -13,6 +13,8 @@
 		269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC19277DA44A0024E3C1 /* AppDelegate.swift */; };
 		269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC22277DA44C0024E3C1 /* Assets.xcassets */; };
 		269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */; };
+		269FBC55277DB5B10024E3C1 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC54277DB5B10024E3C1 /* UIImage+Utils.swift */; };
+		269FBC57277DB7060024E3C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC56277DB7050024E3C1 /* Localizable.strings */; };
 		29F715ACEB0E4EF18BF6EF80 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318EED504FB10DBC465551 /* CityViewController.swift */; };
 		32DEC465DF9A74917F7DBF15 /* SearchViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E449C89F500CA7A1D08CBAAF /* SearchViewContract.swift */; };
 		4C2F91319C8869C64B10224C /* CityPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */; };
@@ -33,6 +35,8 @@
 		269FBC22277DA44C0024E3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		269FBC25277DA44C0024E3C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		269FBC27277DA44C0024E3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		269FBC54277DB5B10024E3C1 /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
+		269FBC56277DB7050024E3C1 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityPresenterImplementation.swift; sourceTree = "<group>"; };
 		2C929E551A5208A091972A12 /* CityViewContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityViewContract.swift; sourceTree = "<group>"; };
 		31E7E96DEA9A07E7B3251E05 /* SettingsPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenterImplementation.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		269FBC2D277DA4980024E3C1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				269FBC54277DB5B10024E3C1 /* UIImage+Utils.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				269FBC22277DA44C0024E3C1 /* Assets.xcassets */,
 				269FBC27277DA44C0024E3C1 /* Info.plist */,
 				269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */,
+				269FBC56277DB7050024E3C1 /* Localizable.strings */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -202,7 +208,6 @@
 				FA474271B1F12D9A129994AE /* Pods-Meteow.debug.xcconfig */,
 				8B12028EF0E5468969185A7A /* Pods-Meteow.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -372,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */,
+				269FBC57277DB7060024E3C1 /* Localizable.strings in Resources */,
 				269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +442,7 @@
 				4C2F91319C8869C64B10224C /* CityPresenterImplementation.swift in Sources */,
 				4D34803EF15F95BA9797795D /* SettingsViewContract.swift in Sources */,
 				073144253C8A35C019117E03 /* SettingsViewController.swift in Sources */,
+				269FBC55277DB5B10024E3C1 /* UIImage+Utils.swift in Sources */,
 				B7B2B8E0305D206B9A833391 /* SettingsPresenter.swift in Sources */,
 				CD19EE63940DF97314B08FA4 /* SettingsPresenterImplementation.swift in Sources */,
 			);
