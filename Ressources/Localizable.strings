@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Meteow
+
+  Created by Loïc Saillant on 30/12/2021.
+  
+*/
+
+// Search
+"tab_search_title" = "Search";
+
+// Cities
+"tab_cities_title" = "Cities";
+
+// Settings
+"tab_settings_title" = "Settings";
