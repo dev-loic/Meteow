@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC19277DA44A0024E3C1 /* AppDelegate.swift */; };
-		269FBC1C277DA44A0024E3C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC1B277DA44A0024E3C1 /* SceneDelegate.swift */; };
-		269FBC1E277DA44A0024E3C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC1D277DA44A0024E3C1 /* ViewController.swift */; };
-		269FBC21277DA44A0024E3C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC1F277DA44A0024E3C1 /* Main.storyboard */; };
 		269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC22277DA44C0024E3C1 /* Assets.xcassets */; };
 		269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +15,6 @@
 /* Begin PBXFileReference section */
 		269FBC16277DA44A0024E3C1 /* Meteow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		269FBC19277DA44A0024E3C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		269FBC1B277DA44A0024E3C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		269FBC1D277DA44A0024E3C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		269FBC20277DA44A0024E3C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		269FBC22277DA44C0024E3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		269FBC25277DA44C0024E3C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		269FBC27277DA44C0024E3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +34,9 @@
 		269FBC0D277DA44A0024E3C1 = {
 			isa = PBXGroup;
 			children = (
+				269FBC2D277DA4980024E3C1 /* Categories */,
+				269FBC2E277DA49F0024E3C1 /* Classes */,
+				269FBC2F277DA4A70024E3C1 /* Ressources */,
 				269FBC18277DA44A0024E3C1 /* Meteow */,
 				269FBC17277DA44A0024E3C1 /* Products */,
 			);
@@ -56,15 +53,57 @@
 		269FBC18277DA44A0024E3C1 /* Meteow */ = {
 			isa = PBXGroup;
 			children = (
-				269FBC19277DA44A0024E3C1 /* AppDelegate.swift */,
-				269FBC1B277DA44A0024E3C1 /* SceneDelegate.swift */,
-				269FBC1D277DA44A0024E3C1 /* ViewController.swift */,
-				269FBC1F277DA44A0024E3C1 /* Main.storyboard */,
-				269FBC22277DA44C0024E3C1 /* Assets.xcassets */,
-				269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */,
-				269FBC27277DA44C0024E3C1 /* Info.plist */,
 			);
 			path = Meteow;
+			sourceTree = "<group>";
+		};
+		269FBC2D277DA4980024E3C1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		269FBC2E277DA49F0024E3C1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				269FBC31277DA4C80024E3C1 /* App */,
+				269FBC30277DA4C40024E3C1 /* Core */,
+				269FBC19277DA44A0024E3C1 /* AppDelegate.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		269FBC2F277DA4A70024E3C1 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				269FBC32277DA4FF0024E3C1 /* Xibs */,
+				269FBC22277DA44C0024E3C1 /* Assets.xcassets */,
+				269FBC27277DA44C0024E3C1 /* Info.plist */,
+				269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		269FBC30277DA4C40024E3C1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		269FBC31277DA4C80024E3C1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		269FBC32277DA4FF0024E3C1 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +166,6 @@
 			files = (
 				269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */,
 				269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */,
-				269FBC21277DA44A0024E3C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269FBC1E277DA44A0024E3C1 /* ViewController.swift in Sources */,
 				269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */,
-				269FBC1C277DA44A0024E3C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		269FBC1F277DA44A0024E3C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				269FBC20277DA44A0024E3C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +320,9 @@
 				DEVELOPMENT_TEAM = PNXVL7Y725;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meteow/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,9 +348,9 @@
 				DEVELOPMENT_TEAM = PNXVL7Y725;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Meteow/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
