@@ -11,6 +11,7 @@ import Foundation
 class SearchPresenterImplementation: SearchPresenter {
 
     private weak var viewContract: SearchViewContract?
+    private lazy var mapper = SearchViewModelMapper()
 
     init(viewContract: SearchViewContract) {
         self.viewContract = viewContract
@@ -19,6 +20,6 @@ class SearchPresenterImplementation: SearchPresenter {
     // MARK: - SearchPresenter
 
     func start() {
-        // TODO: (Loic Saillant) 2021/30/12 To complete
+        viewContract?.display(mapper.map())
     }
 }

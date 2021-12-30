@@ -49,6 +49,11 @@ class SearchViewController: UIViewController {
 extension SearchViewController: SearchViewContract {
     
     // MARK: - SearchViewContract
+    
+    func display(_ viewModel: SearchViewModel) {
+        dataSource.configure(with: viewModel)
+        tableView.reloadData()
+    }
 }
 
 extension SearchViewController: SearchDataSourceDelegate {
