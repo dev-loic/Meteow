@@ -10,14 +10,18 @@ import Foundation
 
 class SearchPresenterImplementation: SearchPresenter {
 
-    private let repository: SearchRepository
+    private let searchRepository: SearchRepository
+    private let citiesRepository: CitiesRepository
     private weak var viewContract: SearchViewContract?
     private lazy var mapper = SearchViewModelMapper()
     private var searchResults: SearchResultsData = []
 
-    init(viewContract: SearchViewContract, repository: SearchRepository) {
+    init(viewContract: SearchViewContract,
+         searchRepository: SearchRepository,
+         citiesRepository: CitiesRepository) {
         self.viewContract = viewContract
-        self.repository = repository
+        self.searchRepository = searchRepository
+        self.citiesRepository = citiesRepository
     }
 
     // MARK: - SearchPresenter
@@ -27,7 +31,7 @@ class SearchPresenterImplementation: SearchPresenter {
     }
     
     func search(_ query: String) {
-        repository.retrieveCities(from: query) { results in
+        searchRepository.retrieveCities(from: query) { results in
             self.searchResults = results
             self.viewContract?.display(self.mapper.map(from: self.searchResults))
         }
@@ -38,6 +42,9 @@ class SearchPresenterImplementation: SearchPresenter {
     }
     
     func selectCity(at index: Int) {
-        // TODO: (Loic Saillant) 2021/12/30 To implement
+        let citySearchResult = searchResults[index]
+        // TODO: (Loic Saillant) 2021/12/30 Should have a mapper here
+        let city = City(key: citySearchResult.key, name: citySearchResult.name)
+        citiesRepository.addFavorite(city)
     }
 }
