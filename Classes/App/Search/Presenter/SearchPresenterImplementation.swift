@@ -13,7 +13,7 @@ class SearchPresenterImplementation: SearchPresenter {
     private let repository: SearchRepository
     private weak var viewContract: SearchViewContract?
     private lazy var mapper = SearchViewModelMapper()
-    private var searchResults: SearchResultsData = .empty
+    private var searchResults: SearchResultsData = []
 
     init(viewContract: SearchViewContract, repository: SearchRepository) {
         self.viewContract = viewContract
@@ -23,7 +23,7 @@ class SearchPresenterImplementation: SearchPresenter {
     // MARK: - SearchPresenter
 
     func start() {
-        viewContract?.display(mapper.map(from: .empty))
+        viewContract?.display(mapper.map(from: []))
     }
     
     func search(_ query: String) {

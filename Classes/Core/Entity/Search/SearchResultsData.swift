@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct SearchResultsData {
-    let cities: [SearchResultCity]
-    
-    static let empty = SearchResultsData(cities: [])
-}
+typealias SearchResultsData = [SearchResultCity]
 
-struct SearchResultCity {
+struct SearchResultCity: Decodable {
     let key: String
     let name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case key = "Key"
+        case name = "LocalizedName"
+      }
 }
