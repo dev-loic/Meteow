@@ -11,8 +11,10 @@ class SearchViewModelMapper {
     
     // MARK: - SearchViewModelMapper
     
-    func map() -> SearchViewModel {
-        // TODO: (Loic Saillant) 2021/12/30 To complete
-        return .empty
+    func map(from results: SearchResultsData) -> SearchViewModel {
+        let cells = results.cities.map { result in
+            return SearchCellViewModel(title: result.name)
+        }
+        return SearchViewModel(cells: cells)
     }
 }

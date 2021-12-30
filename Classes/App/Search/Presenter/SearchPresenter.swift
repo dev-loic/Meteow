@@ -10,4 +10,5 @@ import Foundation
 
 protocol SearchPresenter {
     func start()
+    func search(_ query: String)
 }

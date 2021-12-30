@@ -20,6 +20,10 @@ class SearchPresenterImplementation: SearchPresenter {
     // MARK: - SearchPresenter
 
     func start() {
-        viewContract?.display(mapper.map())
+        viewContract?.display(.empty)
+    }
+    
+    func search(_ query: String) {
+        // TODO: (Loic Saillant) 2021/12/30 To complete
     }
 }

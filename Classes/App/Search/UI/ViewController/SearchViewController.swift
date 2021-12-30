@@ -68,6 +68,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // ???: (Loic Saillant) 2021/12/30 I choose not to send a request at each letter,
         // like a true autocomplete because I am limited to 50 calls/day with free plan
-        // TODO: (Loic Saillant) 2021/12/30 Send request to get cities
+        guard let query = searchBar.text else { return }
+        presenter?.search(query)
     }
 }
