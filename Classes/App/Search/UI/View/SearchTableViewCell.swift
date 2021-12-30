@@ -14,8 +14,6 @@ protocol SearchTableViewCellDelegate: AnyObject {
 
 class SearchTableViewCell: UITableViewCell {
     
-    private lazy var titleLabel = UILabel()
-    
     // MARK: - Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,13 +29,12 @@ class SearchTableViewCell: UITableViewCell {
     // MARK: - SearchTableViewCell
     
     func configure(with viewModel: SearchCellViewModel) {
-        titleLabel.text = viewModel.title
+        textLabel?.text = viewModel.title
     }
     
     // MARK: - Private
     
     private func setup() {
-        contentView.addSubview(titleLabel)
-        titleLabel.ad_pinToSuperview(insets: UIEdgeInsets(horizontal: 16.0, vertical: 8.0))
+        // TODO: (Loic Saillant) 2021/12/30 To complete
     }
 }
