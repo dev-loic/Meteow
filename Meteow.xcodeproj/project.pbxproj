@@ -15,6 +15,11 @@
 		269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */; };
 		269FBC55277DB5B10024E3C1 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC54277DB5B10024E3C1 /* UIImage+Utils.swift */; };
 		269FBC57277DB7060024E3C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC56277DB7050024E3C1 /* Localizable.strings */; };
+		26C0E733277DB98E00EC78DE /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C0E732277DB98E00EC78DE /* SearchViewController.xib */; };
+		26C0E735277DBA9C00EC78DE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E734277DBA9C00EC78DE /* SearchTableViewCell.swift */; };
+		26C0E739277DBAD900EC78DE /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E738277DBAD900EC78DE /* SearchDataSource.swift */; };
+		26C0E73B277DBC4C00EC78DE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E73A277DBC4C00EC78DE /* SearchViewModel.swift */; };
+		26C0E73D277DBC9600EC78DE /* SearchViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E73C277DBC9600EC78DE /* SearchViewModelMapper.swift */; };
 		29F715ACEB0E4EF18BF6EF80 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318EED504FB10DBC465551 /* CityViewController.swift */; };
 		32DEC465DF9A74917F7DBF15 /* SearchViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E449C89F500CA7A1D08CBAAF /* SearchViewContract.swift */; };
 		4C2F91319C8869C64B10224C /* CityPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */; };
@@ -37,6 +42,11 @@
 		269FBC27277DA44C0024E3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		269FBC54277DB5B10024E3C1 /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		269FBC56277DB7050024E3C1 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		26C0E732277DB98E00EC78DE /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		26C0E734277DBA9C00EC78DE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		26C0E738277DBAD900EC78DE /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
+		26C0E73A277DBC4C00EC78DE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		26C0E73C277DBC9600EC78DE /* SearchViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelMapper.swift; sourceTree = "<group>"; };
 		276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityPresenterImplementation.swift; sourceTree = "<group>"; };
 		2C929E551A5208A091972A12 /* CityViewContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityViewContract.swift; sourceTree = "<group>"; };
 		31E7E96DEA9A07E7B3251E05 /* SettingsPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenterImplementation.swift; sourceTree = "<group>"; };
@@ -160,8 +170,33 @@
 		269FBC32277DA4FF0024E3C1 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				269FBC58277DB9350024E3C1 /* Search */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		269FBC58277DB9350024E3C1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E732277DB98E00EC78DE /* SearchViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		26C0E736277DBAC100EC78DE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E73A277DBC4C00EC78DE /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		26C0E737277DBAC800EC78DE /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E73C277DBC9600EC78DE /* SearchViewModelMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		299C345D87352B8C45137172 /* UI */ = {
@@ -232,6 +267,9 @@
 		8B97DA5B6B72187A33F04D32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				26C0E737277DBAC800EC78DE /* Mapper */,
+				26C0E736277DBAC100EC78DE /* ViewModel */,
+				26C0E738277DBAD900EC78DE /* SearchDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +302,7 @@
 		B6AE68706187AB1BF369614C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26C0E734277DBA9C00EC78DE /* SearchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,6 +417,7 @@
 			files = (
 				269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */,
 				269FBC57277DB7060024E3C1 /* Localizable.strings in Resources */,
+				26C0E733277DB98E00EC78DE /* SearchViewController.xib in Resources */,
 				269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +473,7 @@
 			files = (
 				269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */,
 				32DEC465DF9A74917F7DBF15 /* SearchViewContract.swift in Sources */,
+				26C0E739277DBAD900EC78DE /* SearchDataSource.swift in Sources */,
 				6A843CB26B619A76818C0A82 /* SearchViewController.swift in Sources */,
 				147F1D4B44C8CF57BBE88646 /* SearchPresenter.swift in Sources */,
 				AAA16D92C03B99BB7B8EF8BD /* SearchPresenterImplementation.swift in Sources */,
@@ -440,9 +481,12 @@
 				29F715ACEB0E4EF18BF6EF80 /* CityViewController.swift in Sources */,
 				A20C0BEE931C534418A29808 /* CityPresenter.swift in Sources */,
 				4C2F91319C8869C64B10224C /* CityPresenterImplementation.swift in Sources */,
+				26C0E735277DBA9C00EC78DE /* SearchTableViewCell.swift in Sources */,
+				26C0E73D277DBC9600EC78DE /* SearchViewModelMapper.swift in Sources */,
 				4D34803EF15F95BA9797795D /* SettingsViewContract.swift in Sources */,
 				073144253C8A35C019117E03 /* SettingsViewController.swift in Sources */,
 				269FBC55277DB5B10024E3C1 /* UIImage+Utils.swift in Sources */,
+				26C0E73B277DBC4C00EC78DE /* SearchViewModel.swift in Sources */,
 				B7B2B8E0305D206B9A833391 /* SettingsPresenter.swift in Sources */,
 				CD19EE63940DF97314B08FA4 /* SettingsPresenterImplementation.swift in Sources */,
 			);

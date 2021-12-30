@@ -8,6 +8,8 @@
 
 // Search
 "tab_search_title" = "Search";
+"search_navigation_bar_title" = "Select your favorite cities 🌇";
+"search_bar_placeholder" = "Type city name";
 
 // Cities
 "tab_cities_title" = "Cities";
