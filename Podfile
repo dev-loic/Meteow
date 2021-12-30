@@ -8,5 +8,6 @@ target 'Meteow' do
   # Pods for Meteow
   pod 'ADUtils', '~> 10.0'
   pod 'SwiftLint', '~> 0.44'
+  pod 'Alamofire', '~> 5.4'
 
 end

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchViewContract: AnyObject {
-
+    func display(_ viewModel: SearchViewModel)
 }

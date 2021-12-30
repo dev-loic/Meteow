@@ -4,22 +4,26 @@ PODS:
   - ADUtils/objc (10.5.0):
     - ADUtils/Swift
   - ADUtils/Swift (10.5.0)
+  - Alamofire (5.4.4)
   - SwiftLint (0.44.0)
 
 DEPENDENCIES:
   - ADUtils (~> 10.0)
+  - Alamofire (~> 5.4)
   - SwiftLint (~> 0.44)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - SwiftLint
   trunk:
     - ADUtils
 
 SPEC CHECKSUMS:
   ADUtils: 67372e355673bbc53f6843423dc78ebf3771f8ec
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
 
-PODFILE CHECKSUM: 54ab8ae2b5569621b778a41d958aaa3e91c11abe
+PODFILE CHECKSUM: 8f05c77baaa27a312b2cb2f26a3462b744e05985
 
 COCOAPODS: 1.11.2

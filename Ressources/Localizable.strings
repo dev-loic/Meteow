@@ -8,9 +8,16 @@
 
 // Search
 "tab_search_title" = "Search";
+"search_navigation_bar_title" = "Select your favorite cities 🌇";
+"search_bar_placeholder" = "Type city name";
+"search_add_favorite_title" = "Add to favorites?";
 
 // Cities
 "tab_cities_title" = "Cities";
 
 // Settings
 "tab_settings_title" = "Settings";
+
+// Alert
+"alert_cancel_button_title" = "Cancel";
+"alert_confirm_button_title" = "Confirm";

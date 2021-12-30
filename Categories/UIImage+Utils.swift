@@ -14,11 +14,11 @@ extension UIImage {
         return UIImage(systemName: "magnifyingglass")
     }
     
-    static var sun: UIImage? {
-        return UIImage(systemName: "sun.max.fill")
-    }
-    
     static var settings: UIImage?  {
         return UIImage(systemName: "gear")
+    }
+    
+    static var sun: UIImage? {
+        return UIImage(systemName: "sun.max.fill")
     }
 }

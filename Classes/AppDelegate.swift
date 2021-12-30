@@ -73,7 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createSearchNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         let viewController = SearchViewController()
-        let presenter = SearchPresenterImplementation(viewContract: viewController)
+        let searchRepository = SearchRepositoryImplementation()
+        let citiesRepository = CitiesRepositoryImplementation()
+        let presenter = SearchPresenterImplementation(
+            viewContract: viewController,
+            searchRepository: searchRepository,
+            citiesRepository: citiesRepository
+        )
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
