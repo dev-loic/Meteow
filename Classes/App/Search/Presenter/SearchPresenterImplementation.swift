@@ -10,20 +10,26 @@ import Foundation
 
 class SearchPresenterImplementation: SearchPresenter {
 
+    private let repository: SearchRepository
     private weak var viewContract: SearchViewContract?
     private lazy var mapper = SearchViewModelMapper()
+    private var searchResults: SearchResultsData = .empty
 
-    init(viewContract: SearchViewContract) {
+    init(viewContract: SearchViewContract, repository: SearchRepository) {
         self.viewContract = viewContract
+        self.repository = repository
     }
 
     // MARK: - SearchPresenter
 
     func start() {
-        viewContract?.display(.empty)
+        viewContract?.display(mapper.map(from: .empty))
     }
     
     func search(_ query: String) {
-        // TODO: (Loic Saillant) 2021/12/30 To complete
+        repository.retrieveCities(from: query) { results in
+            self.searchResults = results
+            self.viewContract?.display(self.mapper.map(from: self.searchResults))
+        }
     }
 }
