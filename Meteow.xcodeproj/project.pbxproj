@@ -26,6 +26,9 @@
 		26C0E74E277DF89200EC78DE /* TargetSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E74D277DF89100EC78DE /* TargetSettings.swift */; };
 		26C0E756277E0DAF00EC78DE /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E755277E0DAE00EC78DE /* AlertViewModel.swift */; };
 		26C0E758277E0F1000EC78DE /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E757277E0F1000EC78DE /* Alertable.swift */; };
+		26C0E75C277E179900EC78DE /* CitiesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E75B277E179900EC78DE /* CitiesRepository.swift */; };
+		26C0E75F277E17D600EC78DE /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E75E277E17D600EC78DE /* City.swift */; };
+		26C0E762277E180300EC78DE /* CitiesRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0E761277E180300EC78DE /* CitiesRepositoryImplementation.swift */; };
 		29F715ACEB0E4EF18BF6EF80 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318EED504FB10DBC465551 /* CityViewController.swift */; };
 		32DEC465DF9A74917F7DBF15 /* SearchViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E449C89F500CA7A1D08CBAAF /* SearchViewContract.swift */; };
 		4C2F91319C8869C64B10224C /* CityPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */; };
@@ -59,6 +62,9 @@
 		26C0E74D277DF89100EC78DE /* TargetSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSettings.swift; sourceTree = "<group>"; };
 		26C0E755277E0DAE00EC78DE /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		26C0E757277E0F1000EC78DE /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		26C0E75B277E179900EC78DE /* CitiesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesRepository.swift; sourceTree = "<group>"; };
+		26C0E75E277E17D600EC78DE /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		26C0E761277E180300EC78DE /* CitiesRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesRepositoryImplementation.swift; sourceTree = "<group>"; };
 		276BA575B3BAC05FBB2B1DC4 /* CityPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityPresenterImplementation.swift; sourceTree = "<group>"; };
 		2C929E551A5208A091972A12 /* CityViewContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityViewContract.swift; sourceTree = "<group>"; };
 		31E7E96DEA9A07E7B3251E05 /* SettingsPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenterImplementation.swift; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 		26C0E73E277DC59300EC78DE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				26C0E760277E17EF00EC78DE /* Cities */,
 				26C0E747277DC6D600EC78DE /* Search */,
 			);
 			path = Data;
@@ -227,6 +234,7 @@
 		26C0E73F277DC5A100EC78DE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				26C0E759277E177F00EC78DE /* Cities */,
 				26C0E740277DC5AD00EC78DE /* Search */,
 			);
 			path = Data;
@@ -243,6 +251,7 @@
 		26C0E743277DC61700EC78DE /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				26C0E75D277E17CB00EC78DE /* Cities */,
 				26C0E744277DC61F00EC78DE /* Search */,
 			);
 			path = Entity;
@@ -287,6 +296,30 @@
 				26C0E757277E0F1000EC78DE /* Alertable.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		26C0E759277E177F00EC78DE /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E75B277E179900EC78DE /* CitiesRepository.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		26C0E75D277E17CB00EC78DE /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E75E277E17D600EC78DE /* City.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		26C0E760277E17EF00EC78DE /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				26C0E761277E180300EC78DE /* CitiesRepositoryImplementation.swift */,
+			);
+			path = Cities;
 			sourceTree = "<group>";
 		};
 		299C345D87352B8C45137172 /* UI */ = {
@@ -563,7 +596,9 @@
 			files = (
 				269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */,
 				32DEC465DF9A74917F7DBF15 /* SearchViewContract.swift in Sources */,
+				26C0E762277E180300EC78DE /* CitiesRepositoryImplementation.swift in Sources */,
 				26C0E739277DBAD900EC78DE /* SearchDataSource.swift in Sources */,
+				26C0E75C277E179900EC78DE /* CitiesRepository.swift in Sources */,
 				6A843CB26B619A76818C0A82 /* SearchViewController.swift in Sources */,
 				147F1D4B44C8CF57BBE88646 /* SearchPresenter.swift in Sources */,
 				26C0E74E277DF89200EC78DE /* TargetSettings.swift in Sources */,
@@ -584,6 +619,7 @@
 				26C0E73B277DBC4C00EC78DE /* SearchViewModel.swift in Sources */,
 				B7B2B8E0305D206B9A833391 /* SettingsPresenter.swift in Sources */,
 				CD19EE63940DF97314B08FA4 /* SettingsPresenterImplementation.swift in Sources */,
+				26C0E75F277E17D600EC78DE /* City.swift in Sources */,
 				26C0E742277DC5B900EC78DE /* SearchRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
