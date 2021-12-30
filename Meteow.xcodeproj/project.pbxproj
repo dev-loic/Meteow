@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1522ECBFB9D850B0D55A6ADA /* Pods_Meteow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB07E3A0568D9067C15C5237 /* Pods_Meteow.framework */; };
 		269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC19277DA44A0024E3C1 /* AppDelegate.swift */; };
 		269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC22277DA44C0024E3C1 /* Assets.xcassets */; };
 		269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */; };
@@ -18,6 +19,9 @@
 		269FBC22277DA44C0024E3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		269FBC25277DA44C0024E3C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		269FBC27277DA44C0024E3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B12028EF0E5468969185A7A /* Pods-Meteow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteow.release.xcconfig"; path = "Target Support Files/Pods-Meteow/Pods-Meteow.release.xcconfig"; sourceTree = "<group>"; };
+		EB07E3A0568D9067C15C5237 /* Pods_Meteow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meteow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA474271B1F12D9A129994AE /* Pods-Meteow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteow.debug.xcconfig"; path = "Target Support Files/Pods-Meteow/Pods-Meteow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,12 +29,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1522ECBFB9D850B0D55A6ADA /* Pods_Meteow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1894A4F6D69286B308F234B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB07E3A0568D9067C15C5237 /* Pods_Meteow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		269FBC0D277DA44A0024E3C1 = {
 			isa = PBXGroup;
 			children = (
@@ -39,6 +52,8 @@
 				269FBC2F277DA4A70024E3C1 /* Ressources */,
 				269FBC18277DA44A0024E3C1 /* Meteow */,
 				269FBC17277DA44A0024E3C1 /* Products */,
+				77000F96D1845D8BF84AF05B /* Pods */,
+				1894A4F6D69286B308F234B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +121,16 @@
 			path = Xibs;
 			sourceTree = "<group>";
 		};
+		77000F96D1845D8BF84AF05B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA474271B1F12D9A129994AE /* Pods-Meteow.debug.xcconfig */,
+				8B12028EF0E5468969185A7A /* Pods-Meteow.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 269FBC2A277DA44C0024E3C1 /* Build configuration list for PBXNativeTarget "Meteow" */;
 			buildPhases = (
+				08A36ED5914AD269F55916D0 /* [CP] Check Pods Manifest.lock */,
 				269FBC12277DA44A0024E3C1 /* Sources */,
 				269FBC13277DA44A0024E3C1 /* Frameworks */,
 				269FBC14277DA44A0024E3C1 /* Resources */,
+				1B8FAB3C0AF3E8B38FF59018 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +197,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08A36ED5914AD269F55916D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meteow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B8FAB3C0AF3E8B38FF59018 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meteow/Pods-Meteow-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meteow/Pods-Meteow-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Meteow/Pods-Meteow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		269FBC12277DA44A0024E3C1 /* Sources */ = {
@@ -312,6 +381,7 @@
 		};
 		269FBC2B277DA44C0024E3C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA474271B1F12D9A129994AE /* Pods-Meteow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -340,6 +410,7 @@
 		};
 		269FBC2C277DA44C0024E3C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B12028EF0E5468969185A7A /* Pods-Meteow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

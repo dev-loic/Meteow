@@ -1,0 +1,25 @@
+PODS:
+  - ADUtils (10.5.0):
+    - ADUtils/objc (= 10.5.0)
+  - ADUtils/objc (10.5.0):
+    - ADUtils/Swift
+  - ADUtils/Swift (10.5.0)
+  - SwiftLint (0.44.0)
+
+DEPENDENCIES:
+  - ADUtils (~> 10.0)
+  - SwiftLint (~> 0.44)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SwiftLint
+  trunk:
+    - ADUtils
+
+SPEC CHECKSUMS:
+  ADUtils: 67372e355673bbc53f6843423dc78ebf3771f8ec
+  SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
+
+PODFILE CHECKSUM: 54ab8ae2b5569621b778a41d958aaa3e91c11abe
+
+COCOAPODS: 1.11.2
