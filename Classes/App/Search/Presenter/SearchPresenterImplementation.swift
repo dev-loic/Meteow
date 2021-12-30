@@ -23,7 +23,7 @@ class SearchPresenterImplementation: SearchPresenter {
     // MARK: - SearchPresenter
 
     func start() {
-        viewContract?.display(mapper.map(from: []))
+        clearSearch()
     }
     
     func search(_ query: String) {
@@ -31,5 +31,9 @@ class SearchPresenterImplementation: SearchPresenter {
             self.searchResults = results
             self.viewContract?.display(self.mapper.map(from: self.searchResults))
         }
+    }
+    
+    func clearSearch() {
+        viewContract?.display(mapper.map(from: []))
     }
 }

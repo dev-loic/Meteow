@@ -71,4 +71,8 @@ extension SearchViewController: UISearchBarDelegate {
         guard let query = searchBar.text else { return }
         presenter?.search(query)
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter?.clearSearch()
+    }
 }
