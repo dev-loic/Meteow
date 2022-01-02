@@ -8,5 +8,5 @@
 import Foundation
 
 struct WeatherData {
-    let temperature: String
+    let temperature: Int
 }
