@@ -10,13 +10,13 @@ import Foundation
 
 class CityPresenterImplementation: CityPresenter {
 
-    private let key: String
+    private let city: City
     private weak var viewContract: CityViewContract?
     private let weatherRepository: WeatherRepository
     private lazy var mapper = CityViewModelMapper()
 
-    init(key: String, viewContract: CityViewContract, weatherRepository: WeatherRepository) {
-        self.key = key
+    init(city: City, viewContract: CityViewContract, weatherRepository: WeatherRepository) {
+        self.city = city
         self.viewContract = viewContract
         self.weatherRepository = weatherRepository
     }
@@ -24,8 +24,8 @@ class CityPresenterImplementation: CityPresenter {
     // MARK: - CityPresenter
 
     func start() {
-        weatherRepository.retrieveData(cityKey: key) { data in
-            let viewModel = self.mapper.map(data: data)
+        weatherRepository.retrieveData(cityKey: city.key) { data in
+            let viewModel = self.mapper.map(cityName: self.city.name, data: data)
             self.viewContract?.display(viewModel)
         }
     }

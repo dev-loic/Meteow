@@ -14,17 +14,17 @@ class CitiesViewModelMapper {
     
     // MARK: - CitiesViewModelMapper
     
-    func map(cityKeys: [String]) -> CitiesViewModel {
-        CitiesViewModel(controllers: cityKeys.map { self.mapCity(key: $0) })
+    func map(cities: [City]) -> CitiesViewModel {
+        CitiesViewModel(controllers: cities.map { self.mapCity(from: $0) })
     }
     
     // MARK: - Private
     
-    private func mapCity(key: String) -> UIViewController {
+    private func mapCity(from city: City) -> UIViewController {
         let viewController = CityViewController()
         let weatherRepository = WeatherRepositoryImplementation()
         let presenter = CityPresenterImplementation(
-            key: key,
+            city: city,
             viewContract: viewController,
             weatherRepository: weatherRepository
         )
