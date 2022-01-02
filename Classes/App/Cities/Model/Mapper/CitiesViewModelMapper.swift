@@ -10,10 +10,25 @@ import UIKit
 
 class CitiesViewModelMapper {
     
+    private lazy var cityMapper = CityViewModelMapper()
+    
     // MARK: - CitiesViewModelMapper
     
-    func map() -> CitiesViewModel {
-        // TODO: (Loic Saillant) 2022/01/02 To complete
-        return CitiesViewModel(controllers: [])
+    func map(cityKeys: [String]) -> CitiesViewModel {
+        CitiesViewModel(controllers: cityKeys.map { self.mapCity(key: $0) })
+    }
+    
+    // MARK: - Private
+    
+    private func mapCity(key: String) -> UIViewController {
+        let viewController = CityViewController()
+        let weatherRepository = WeatherRepositoryImplementation()
+        let presenter = CityPresenterImplementation(
+            key: key,
+            viewContract: viewController,
+            weatherRepository: weatherRepository
+        )
+        viewController.presenter = presenter
+        return viewController
     }
 }

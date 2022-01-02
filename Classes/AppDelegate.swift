@@ -86,7 +86,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createCitiesNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         let viewController = CitiesViewController()
-        let presenter = CitiesPresenterImplementation(viewContract: viewController)
+        let repository = CitiesRepositoryImplementation()
+        let presenter = CitiesPresenterImplementation(viewContract: viewController, repository: repository)
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController

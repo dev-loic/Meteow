@@ -12,14 +12,17 @@ class CitiesPresenterImplementation: CitiesPresenter {
 
     private weak var viewContract: CitiesViewContract?
     private lazy var mapper = CitiesViewModelMapper()
+    private let repository: CitiesRepository
 
-    init(viewContract: CitiesViewContract) {
+    init(viewContract: CitiesViewContract, repository: CitiesRepository) {
         self.viewContract = viewContract
+        self.repository = repository
     }
 
     // MARK: - CitiesPresenter
 
     func start() {
-        viewContract?.display(mapper.map())
+        let favoriteCities = repository.retrieveFavoriteCities()
+        viewContract?.display(mapper.map(cityKeys: favoriteCities.map { $0.key }))
     }
 }
