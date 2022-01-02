@@ -19,6 +19,7 @@
 		261E4A972781CC4000E8740A /* CityHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4A962781CC4000E8740A /* CityHeaderViewModel.swift */; };
 		261E4A9A2781CCA900E8740A /* CityHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 261E4A992781CCA900E8740A /* CityHeaderView.xib */; };
 		261E4A9E2781DB4200E8740A /* UIFont+Meteow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4A9D2781DB4200E8740A /* UIFont+Meteow.swift */; };
+		261E4AA02781DE0300E8740A /* UIScrollView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4A9F2781DE0300E8740A /* UIScrollView+Utils.swift */; };
 		269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC19277DA44A0024E3C1 /* AppDelegate.swift */; };
 		269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC22277DA44C0024E3C1 /* Assets.xcassets */; };
 		269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */; };
@@ -73,6 +74,7 @@
 		261E4A962781CC4000E8740A /* CityHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHeaderViewModel.swift; sourceTree = "<group>"; };
 		261E4A992781CCA900E8740A /* CityHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityHeaderView.xib; sourceTree = "<group>"; };
 		261E4A9D2781DB4200E8740A /* UIFont+Meteow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Meteow.swift"; sourceTree = "<group>"; };
+		261E4A9F2781DE0300E8740A /* UIScrollView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Utils.swift"; sourceTree = "<group>"; };
 		269FBC16277DA44A0024E3C1 /* Meteow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		269FBC19277DA44A0024E3C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		269FBC22277DA44C0024E3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				269FBC54277DB5B10024E3C1 /* UIImage+Utils.swift */,
 				261E4A8F2781C43C00E8740A /* Number+Strings.swift */,
 				261E4A9D2781DB4200E8740A /* UIFont+Meteow.swift */,
+				261E4A9F2781DE0300E8740A /* UIScrollView+Utils.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				26FFE7B82781A2D200836625 /* CityViewModel.swift in Sources */,
 				073144253C8A35C019117E03 /* SettingsViewController.swift in Sources */,
 				261E4A952781CB2200E8740A /* CityHeaderView.swift in Sources */,
+				261E4AA02781DE0300E8740A /* UIScrollView+Utils.swift in Sources */,
 				269FBC55277DB5B10024E3C1 /* UIImage+Utils.swift in Sources */,
 				26C0E73B277DBC4C00EC78DE /* SearchViewModel.swift in Sources */,
 				26FFE7B027819E3900836625 /* WeatherRepository.swift in Sources */,
