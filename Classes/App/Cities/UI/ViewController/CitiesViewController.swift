@@ -62,22 +62,22 @@ extension CitiesViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard
-            let index = controllers.firstIndex(of: viewController),
-            index > 0 else {
-                return nil
+        guard let index = controllers.firstIndex(of: viewController) else { return nil }
+        if index > 0 {
+            return controllers[index - 1]
+        } else {
+            return controllers[controllers.count - index - 1]
         }
-        return controllers[index - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard
-            let index = controllers.firstIndex(of: viewController),
-            index < controllers.count - 1 else {
-                return nil
+        guard let index = controllers.firstIndex(of: viewController) else { return nil }
+        if index < controllers.count - 1 {
+            return controllers[index + 1]
+        } else {
+            return controllers[controllers.count - index - 1]
         }
-        return controllers[index + 1]
     }
 }
 
