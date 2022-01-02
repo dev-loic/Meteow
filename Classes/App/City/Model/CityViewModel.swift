@@ -10,4 +10,6 @@ import Foundation
 struct CityViewModel {
     // TODO: (Loic Saillant) 2022/01/02 To complete
     let currentTemperature: String
+    
+    static let empty = CityViewModel(currentTemperature: "")
 }

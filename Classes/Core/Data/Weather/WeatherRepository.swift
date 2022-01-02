@@ -8,5 +8,5 @@
 import Foundation
 
 protocol WeatherRepository {
-    func retrieveData(cityKey: String, completion: (WeatherData) -> Void)
+    func retrieveData(cityKey: String, completion: @escaping ([WeatherData]) -> Void)
 }

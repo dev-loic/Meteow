@@ -11,8 +11,9 @@ class CityViewModelMapper {
     
     // MARK: - CityViewModelMapper
     
-    func map(data: WeatherData) -> CityViewModel {
+    func map(data: [WeatherData]) -> CityViewModel {
         // TODO: (Loic Saillant) 2022/01/02 To complete
-        return CityViewModel(currentTemperature: String(data.temperature))
+        guard data.count > 0 else { return .empty }
+        return CityViewModel(currentTemperature: String(data[0].temperature))
     }
 }
