@@ -21,3 +21,6 @@
 // Alert
 "alert_cancel_button_title" = "Cancel";
 "alert_confirm_button_title" = "Confirm";
+
+// Strings
+"celsius_format" = "%1$@°C";
