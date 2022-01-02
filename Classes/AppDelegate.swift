@@ -45,17 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         controllers.append(searchNavigationController)
         
-        // MARK: City
+        // MARK: Cities
         
-        // TODO: (Loic Saillant) 2021/12/30 Here we should plug stack dealing with several cities
-        
-        let cityNavigationController = createCityNavigationController()
-        cityNavigationController.tabBarItem = UITabBarItem(
+        let citiesNavigationController = createCitiesNavigationController()
+        citiesNavigationController.tabBarItem = UITabBarItem(
             title: "tab_cities_title".localized(),
             image: .sun,
             tag: 2
         )
-        controllers.append(cityNavigationController)
+        controllers.append(citiesNavigationController)
         
         // MARK: Settings
         
@@ -85,10 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return navigationController
     }
     
-    private func createCityNavigationController() -> UINavigationController {
+    private func createCitiesNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
-        let viewController = CityViewController()
-        let presenter = CityPresenterImplementation(viewContract: viewController)
+        let viewController = CitiesViewController()
+        let presenter = CitiesPresenterImplementation(viewContract: viewController)
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController

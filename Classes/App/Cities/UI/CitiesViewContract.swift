@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CitiesViewContract: AnyObject {
-    // TODO: (Loic Saillant) 2021/12/30 To complete
+    func display(_ viewModel: CitiesViewModel)
 }

@@ -11,6 +11,7 @@ import Foundation
 class CitiesPresenterImplementation: CitiesPresenter {
 
     private weak var viewContract: CitiesViewContract?
+    private lazy var mapper = CitiesViewModelMapper()
 
     init(viewContract: CitiesViewContract) {
         self.viewContract = viewContract
@@ -19,6 +20,6 @@ class CitiesPresenterImplementation: CitiesPresenter {
     // MARK: - CitiesPresenter
 
     func start() {
-        // TODO: (Loic Saillant) 2021/12/30 To implement
+        viewContract?.display(mapper.map())
     }
 }
