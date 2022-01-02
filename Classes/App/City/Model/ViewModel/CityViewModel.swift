@@ -8,8 +8,7 @@
 import Foundation
 
 struct CityViewModel {
-    // TODO: (Loic Saillant) 2022/01/02 To complete
-    let currentTemperature: String
+    let header: CityHeaderViewModel
     
-    static let empty = CityViewModel(currentTemperature: "")
+    static let empty = CityViewModel(header: .empty)
 }
