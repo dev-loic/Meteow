@@ -22,4 +22,8 @@ class CityViewController: UIViewController {
 extension CityViewController: CityViewContract {
     
     // MARK: - CityViewContract
+    
+    func display(_ viewModel: CityViewModel) {
+        // TODO: (Loic Saillant) 2022/01/02 To implement
+    }
 }
