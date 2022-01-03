@@ -10,36 +10,43 @@ import UIKit
 class CityHoursDetailsTableViewCell: UITableViewCell {
     
     private lazy var collectionView = self.createCollectionView()
+    private lazy var dataSource = CityHoursDetailsDataSource()
     
     // MARK: - Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
+        setUp()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setUp()
     }
     
     // MARK: - CityHoursDetailsTableViewCell
     
     func configure(with viewModel: CityHoursDetailsViewModel) {
-        // TODO: (Loic Saillant) To complete
+        dataSource.configure(with: viewModel)
+        collectionView.reloadData()
     }
     
     // MARK: - Private
     
-    private func setup() {
-        // TODO: (Loic Saillant) To complete
+    private func setUp() {
+        contentView.addSubview(collectionView)
+        collectionView.ad_pinToSuperview(insets: UIEdgeInsets(horizontal: 24.0, vertical: 16.0))
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.dataSource = dataSource
+        collectionView.delegate = dataSource
+        dataSource.registerCells(in: collectionView)
     }
     
     private func createCollectionView() -> UICollectionView {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumInteritemSpacing = .greatestFiniteMagnitude
         let collectionView = UICollectionView(frame: contentView.frame, collectionViewLayout: flowLayout)
-        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }
 }

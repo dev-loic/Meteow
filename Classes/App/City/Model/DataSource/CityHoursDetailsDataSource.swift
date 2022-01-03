@@ -14,8 +14,8 @@ class CityHoursDetailsDataSource: NSObject {
 
     // MARK: - CityDataSource
 
-    func registerCells(in collectionView: UITableView) {
-        // TODO: (Loic Saillant) 2022/01/03 To complete
+    func registerCells(in collectionView: UICollectionView) {
+        collectionView.register(cell: .class(CityHoursDetailsCellCollectionViewCell.self))
     }
 
     func configure(with viewModel: CityHoursDetailsViewModel) {
@@ -32,8 +32,9 @@ extension CityHoursDetailsDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: (Loic Saillant) 2022/01/03 To complete
-        return UICollectionViewCell()
+        let cell: CityHoursDetailsCellCollectionViewCell = collectionView.dequeueCell(at: indexPath)
+        cell.configure(with: viewModel.cells[indexPath.row])
+        return cell
     }
 }
 
