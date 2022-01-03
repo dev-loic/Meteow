@@ -23,6 +23,6 @@ class CitiesPresenterImplementation: CitiesPresenter {
 
     func start() {
         let favoriteCities = repository.retrieveFavoriteCities()
-        viewContract?.display(mapper.map(cityKeys: favoriteCities.map { $0.key }))
+        viewContract?.display(mapper.map(cities: favoriteCities))
     }
 }
