@@ -11,6 +11,7 @@ import UIKit
 class CityHoursDetailsDataSource: NSObject {
 
     private var viewModel: CityHoursDetailsViewModel = .empty
+    private lazy var sizingCell = CityHoursDetailsCellCollectionViewCell()
 
     // MARK: - CityDataSource
 
@@ -46,6 +47,17 @@ extension CityHoursDetailsDataSource: UICollectionViewDelegate {
 extension CityHoursDetailsDataSource: UICollectionViewDelegateFlowLayout {
     
     // MARK: - UICollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = 56.0
+        let cellViewModel = viewModel.cells[indexPath.row]
+        sizingCell.prepareForReuse()
+        sizingCell.configure(with: cellViewModel)
+        let height = sizingCell.contentView.ad_preferredLayoutHeight(fittingWidth: width)
+        return CGSize(width: width, height: height)
+    }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

@@ -20,12 +20,25 @@ class CityViewModelMapper {
             explanation: currentWeatherData.explanation,
             weatherIconImage: .weatherImage(currentWeatherData.icon)
         )
-        let hoursDetailsCells = data.map { CityHoursDetailsCellViewModel(temperature: String($0.temperature)) }
         return CityViewModel(
             header: header,
             cells: [
-                .hoursDetails(CityHoursDetailsViewModel(cells: hoursDetailsCells))
+                .hoursDetails(hoursDetailsViewModel(data: data))
             ]
         )
+    }
+    
+    // MARK: - Private
+    
+    private func hoursDetailsViewModel(data: [WeatherData]) -> CityHoursDetailsViewModel {
+        let cells = data.enumerated().map { offset, data in
+            // TODO: (Loic Saillant) 2022/01/03 Correctly map hour
+            CityHoursDetailsCellViewModel(
+                hour: offset == 0 ? "Now" : "10h",
+                weatherIconImage: .weatherImage(data.icon),
+                temperature: data.temperature.celsiusValue
+            )
+        }
+        return CityHoursDetailsViewModel(cells: cells)
     }
 }
