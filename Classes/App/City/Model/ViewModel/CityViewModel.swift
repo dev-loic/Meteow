@@ -5,8 +5,6 @@
 //  Created by Loïc Saillant on 02/01/2022.
 //
 
-import Foundation
-
 struct CityViewModel {
     let header: CityHeaderViewModel
     

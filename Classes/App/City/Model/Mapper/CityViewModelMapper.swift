@@ -18,7 +18,8 @@ class CityViewModelMapper {
         let header = CityHeaderViewModel(
             cityName: cityName,
             currentTemperature: String(currentWeatherData.temperature.celsiusValue),
-            explanation: currentWeatherData.explanation
+            explanation: currentWeatherData.explanation,
+            weatherIconImage: .weatherImage(currentWeatherData.icon)
         )
         return CityViewModel(header: header)
     }
