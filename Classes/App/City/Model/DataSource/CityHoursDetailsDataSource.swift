@@ -42,3 +42,20 @@ extension CityHoursDetailsDataSource: UICollectionViewDelegate {
     
     // MARK: - UICollectionViewDelegate
 }
+
+extension CityHoursDetailsDataSource: UICollectionViewDelegateFlowLayout {
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 4.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(value: 8.0)
+    }
+}
