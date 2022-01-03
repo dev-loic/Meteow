@@ -67,7 +67,7 @@ extension CityDataSource: UITableViewDataSource {
         let cellViewModel = viewModel.cells[indexPath.row]
         switch cellViewModel {
         case .hoursDetails, .moreDetails:
-            return 180.0
+            return 201.0
         }
     }
 }

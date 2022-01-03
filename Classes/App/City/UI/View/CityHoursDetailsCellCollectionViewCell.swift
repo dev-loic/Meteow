@@ -49,7 +49,7 @@ class CityHoursDetailsCellCollectionViewCell: UICollectionViewCell {
         stackView.distribution = .fillProportionally
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 8.0
+        stackView.spacing = 12.0
         stackView.ad_addArrangedSubviews([hourLabel, weatherIconImageView, temperatureLabel])
     }
     
@@ -64,7 +64,7 @@ class CityHoursDetailsCellCollectionViewCell: UICollectionViewCell {
         let configuration = UIImage.SymbolConfiguration(hierarchicalColor: .m_blackPure)
         weatherIconImageView.preferredSymbolConfiguration = configuration
         weatherIconImageView.heightAnchor.constraint(equalTo: weatherIconImageView.widthAnchor).isActive = true
-        weatherIconImageView.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
+        weatherIconImageView.heightAnchor.constraint(equalToConstant: 28.0).isActive = true
         weatherIconImageView.contentMode = .scaleAspectFit
     }
 }

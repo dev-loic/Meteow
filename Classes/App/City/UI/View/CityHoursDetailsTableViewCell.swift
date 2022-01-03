@@ -64,7 +64,7 @@ class CityHoursDetailsTableViewCell: UITableViewCell {
     
     private func createCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(
-            frame: contentView.frame,
+            frame: .zero,
             collectionViewLayout: flowLayout
         )
         return collectionView

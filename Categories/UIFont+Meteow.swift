@@ -13,6 +13,10 @@ extension UIFont {
         return UIFont.systemFont(ofSize: 64.0)
     }
     
+    static var bigTitle: UIFont {
+        UIFont.systemFont(ofSize: 56.0)
+    }
+    
     static var largeTitle: UIFont {
         UIFont.systemFont(ofSize: 24.0)
     }

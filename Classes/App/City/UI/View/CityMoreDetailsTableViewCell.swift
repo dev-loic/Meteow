@@ -57,14 +57,13 @@ class CityMoreDetailsTableViewCell: UITableViewCell {
     
     private func createContainerView() -> UIView {
         let view = UIView()
-        view.backgroundColor = .m_lightGray
-        view.layer.cornerRadius = 12.0
+        view.backgroundColor = .clear
         return view
     }
     
     private func createCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(
-            frame: contentView.frame,
+            frame: .zero,
             collectionViewLayout: flowLayout
         )
         return collectionView

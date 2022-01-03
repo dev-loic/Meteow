@@ -50,7 +50,7 @@ extension CityMoreDetailsDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = 56.0
+        let width = 169.0
         let cellViewModel = viewModel.cells[indexPath.row]
         sizingCell.prepareForReuse()
         sizingCell.configure(with: cellViewModel)
@@ -61,12 +61,6 @@ extension CityMoreDetailsDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4.0
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(value: 8.0)
+        return 16.0
     }
 }
