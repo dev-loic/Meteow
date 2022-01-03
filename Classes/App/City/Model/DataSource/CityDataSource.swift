@@ -34,13 +34,17 @@ extension CityDataSource: UITableViewDataSource {
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: (Loic Saillant) 2022/01/02 To complete
-        return 0
+        return viewModel.cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: (Loic Saillant) 2022/01/02 To complete
-        return UITableViewCell()
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case let .hoursDetails(viewModel):
+            let cell: CityHoursDetailsTableViewCell = tableView.dequeueCell(at: indexPath)
+            cell.configure(with: viewModel)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -52,6 +56,14 @@ extension CityDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         sizingHeader.configure(with: viewModel.header)
         return sizingHeader.ad_preferredLayoutHeight(fittingWidth: tableView.m_fittingWidth)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellViewModel = viewModel.cells[indexPath.row]
+        switch cellViewModel {
+        case .hoursDetails:
+            return 180.0
+        }
     }
 }
 

@@ -30,6 +30,7 @@ class CityViewController: UIViewController {
         tableView.delegate = dataSource
         view.addSubview(tableView)
         tableView.ad_pinToSuperview()
+        tableView.separatorStyle = .none
         dataSource.registerHeader(in: tableView)
         dataSource.registerCells(in: tableView)
     }
