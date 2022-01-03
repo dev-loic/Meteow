@@ -31,6 +31,7 @@ class CityViewController: UIViewController {
         view.addSubview(tableView)
         tableView.ad_pinToSuperview()
         dataSource.registerHeader(in: tableView)
+        dataSource.registerCells(in: tableView)
     }
 }
 

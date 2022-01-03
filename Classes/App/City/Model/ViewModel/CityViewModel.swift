@@ -7,6 +7,7 @@
 
 struct CityViewModel {
     let header: CityHeaderViewModel
+    let hoursDetails: CityHoursDetailsViewModel
     
-    static let empty = CityViewModel(header: .empty)
+    static let empty = CityViewModel(header: .empty, hoursDetails: .empty)
 }

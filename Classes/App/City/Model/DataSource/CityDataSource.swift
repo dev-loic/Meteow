@@ -19,6 +19,10 @@ class CityDataSource: NSObject {
     func registerHeader(in tableView: UITableView) {
         tableView.register(header: .nib(CityHeaderView.self))
     }
+    
+    func registerCells(in tableView: UITableView) {
+        tableView.register(cell: .class(CityHoursDetailsTableViewCell.self))
+    }
 
     func configure(with viewModel: CityViewModel) {
         self.viewModel = viewModel
