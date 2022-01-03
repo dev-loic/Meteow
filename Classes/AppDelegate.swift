@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         let viewController = UITabBarController()
-        viewController.tabBar.tintColor = .black
-        viewController.view.backgroundColor = .white
+        viewController.tabBar.tintColor = .m_black
+        viewController.view.backgroundColor = .m_white
         viewController.setViewControllers(controllers, animated: false)
         
         window.rootViewController = viewController
@@ -86,7 +86,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createCitiesNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         let viewController = CitiesViewController()
-        let presenter = CitiesPresenterImplementation(viewContract: viewController)
+        let repository = CitiesRepositoryImplementation()
+        let presenter = CitiesPresenterImplementation(viewContract: viewController, repository: repository)
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController

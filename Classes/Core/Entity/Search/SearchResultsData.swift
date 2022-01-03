@@ -16,5 +16,5 @@ struct SearchResultCity: Decodable {
     enum CodingKeys: String, CodingKey {
         case key = "Key"
         case name = "LocalizedName"
-      }
+    }
 }

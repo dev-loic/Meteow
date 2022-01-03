@@ -47,7 +47,6 @@ extension CitiesViewController: CitiesViewContract {
     
     func display(_ viewModel: CitiesViewModel) {
         controllers = viewModel.controllers
-        view.backgroundColor = .green
         pageViewController.setViewControllers(
             [viewModel.controllers[0]],
             direction: .forward,
@@ -65,8 +64,10 @@ extension CitiesViewController: UIPageViewControllerDataSource {
         guard let index = controllers.firstIndex(of: viewController) else { return nil }
         if index > 0 {
             return controllers[index - 1]
-        } else {
+        } else if controllers.count > 1 {
             return controllers[controllers.count - index - 1]
+        } else {
+            return nil
         }
     }
     
@@ -75,8 +76,10 @@ extension CitiesViewController: UIPageViewControllerDataSource {
         guard let index = controllers.firstIndex(of: viewController) else { return nil }
         if index < controllers.count - 1 {
             return controllers[index + 1]
-        } else {
+        } else if controllers.count > 1 {
             return controllers[controllers.count - index - 1]
+        } else {
+            return nil
         }
     }
 }

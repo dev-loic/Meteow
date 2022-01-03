@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CityViewContract: AnyObject {
-
+    func display(_ viewModel: CityViewModel)
 }
