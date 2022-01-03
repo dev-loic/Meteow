@@ -23,7 +23,8 @@ class CityViewModelMapper {
         return CityViewModel(
             header: header,
             cells: [
-                .hoursDetails(hoursDetailsViewModel(data: data))
+                .hoursDetails(hoursDetailsViewModel(data: data)),
+                .moreDetails(moreDetailsViewModel(data: data))
             ]
         )
     }
@@ -46,5 +47,10 @@ class CityViewModelMapper {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH"
         return String(format: "hours_format".localized(), dateFormatter.string(from: date))
+    }
+    
+    private func moreDetailsViewModel(data: [WeatherData]) -> CityMoreDetailsViewModel {
+        // TODO: (Loic Saillant) 2022/01/03 To implement
+        return CityMoreDetailsViewModel(cells: [])
     }
 }
