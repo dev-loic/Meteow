@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         let viewController = UITabBarController()
-        viewController.tabBar.tintColor = .black
-        viewController.view.backgroundColor = .white
+        viewController.tabBar.tintColor = .m_black
+        viewController.view.backgroundColor = .m_white
         viewController.setViewControllers(controllers, animated: false)
         
         window.rootViewController = viewController

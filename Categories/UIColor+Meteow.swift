@@ -11,6 +11,10 @@ import UIKit
 extension UIColor {
     
     class var m_black: UIColor {
-        return UIColor.black
+        return UIColor(white: 0.16, alpha: 1.0)
+    }
+    
+    class var m_white: UIColor {
+        return UIColor(white: 1.0, alpha: 1.0)
     }
 }
