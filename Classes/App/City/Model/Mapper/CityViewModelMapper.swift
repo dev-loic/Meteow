@@ -32,13 +32,19 @@ class CityViewModelMapper {
     
     private func hoursDetailsViewModel(data: [WeatherData]) -> CityHoursDetailsViewModel {
         let cells = data.enumerated().map { offset, data in
-            // TODO: (Loic Saillant) 2022/01/03 Correctly map hour
             CityHoursDetailsCellViewModel(
-                hour: offset == 0 ? "Now" : "10h",
+                hour: offset == 0 ? "Now" : mapHour(from: data.date),
                 weatherIconImage: .weatherImage(data.icon),
                 temperature: data.temperature.celsiusValue
             )
         }
         return CityHoursDetailsViewModel(cells: cells)
+    }
+    
+    private func mapHour(from date: Date?) -> String {
+        guard let date = date else { return "" }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        return String(format: "hours_format".localized(), dateFormatter.string(from: date))
     }
 }
