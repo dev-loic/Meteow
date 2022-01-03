@@ -8,6 +8,7 @@
 struct RestWeatherData: Decodable {
     let Temperature: TemperatureData
     let IconPhrase: String
+    let WeatherIcon: Int
 }
 
 struct TemperatureData: Decodable {

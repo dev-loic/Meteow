@@ -21,6 +21,8 @@
 		261E4A9E2781DB4200E8740A /* UIFont+Meteow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4A9D2781DB4200E8740A /* UIFont+Meteow.swift */; };
 		261E4AA02781DE0300E8740A /* UIScrollView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4A9F2781DE0300E8740A /* UIScrollView+Utils.swift */; };
 		261E4AA22781E1B900E8740A /* UIColor+Meteow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4AA12781E1B800E8740A /* UIColor+Meteow.swift */; };
+		261E4AA52782D28200E8740A /* WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4AA42782D28200E8740A /* WeatherIcon.swift */; };
+		261E4AA72782D8B600E8740A /* UIImage+WeatherIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4AA62782D8B600E8740A /* UIImage+WeatherIcon.swift */; };
 		269FBC1A277DA44A0024E3C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269FBC19277DA44A0024E3C1 /* AppDelegate.swift */; };
 		269FBC23277DA44C0024E3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC22277DA44C0024E3C1 /* Assets.xcassets */; };
 		269FBC26277DA44C0024E3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 269FBC24277DA44C0024E3C1 /* LaunchScreen.storyboard */; };
@@ -77,6 +79,8 @@
 		261E4A9D2781DB4200E8740A /* UIFont+Meteow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Meteow.swift"; sourceTree = "<group>"; };
 		261E4A9F2781DE0300E8740A /* UIScrollView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Utils.swift"; sourceTree = "<group>"; };
 		261E4AA12781E1B800E8740A /* UIColor+Meteow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Meteow.swift"; sourceTree = "<group>"; };
+		261E4AA42782D28200E8740A /* WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIcon.swift; sourceTree = "<group>"; };
+		261E4AA62782D8B600E8740A /* UIImage+WeatherIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+WeatherIcon.swift"; sourceTree = "<group>"; };
 		269FBC16277DA44A0024E3C1 /* Meteow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		269FBC19277DA44A0024E3C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		269FBC22277DA44C0024E3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +180,14 @@
 			path = City;
 			sourceTree = "<group>";
 		};
+		261E4AA32782D26F00E8740A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				261E4AA42782D28200E8740A /* WeatherIcon.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		269FBC0D277DA44A0024E3C1 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +225,7 @@
 				261E4A9D2781DB4200E8740A /* UIFont+Meteow.swift */,
 				261E4A9F2781DE0300E8740A /* UIScrollView+Utils.swift */,
 				261E4AA12781E1B800E8740A /* UIColor+Meteow.swift */,
+				261E4AA62782D8B600E8740A /* UIImage+WeatherIcon.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -362,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				26C0E754277E0DA200EC78DE /* Alert */,
+				261E4AA32782D26F00E8740A /* UI */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -805,6 +819,7 @@
 				26C0E73D277DBC9600EC78DE /* SearchViewModelMapper.swift in Sources */,
 				261E4AA22781E1B900E8740A /* UIColor+Meteow.swift in Sources */,
 				4D34803EF15F95BA9797795D /* SettingsViewContract.swift in Sources */,
+				261E4AA72782D8B600E8740A /* UIImage+WeatherIcon.swift in Sources */,
 				261E4A9E2781DB4200E8740A /* UIFont+Meteow.swift in Sources */,
 				261E4A972781CC4000E8740A /* CityHeaderViewModel.swift in Sources */,
 				26FFE7B82781A2D200836625 /* CityViewModel.swift in Sources */,
@@ -815,6 +830,7 @@
 				26C0E73B277DBC4C00EC78DE /* SearchViewModel.swift in Sources */,
 				26FFE7B027819E3900836625 /* WeatherRepository.swift in Sources */,
 				B7B2B8E0305D206B9A833391 /* SettingsPresenter.swift in Sources */,
+				261E4AA52782D28200E8740A /* WeatherIcon.swift in Sources */,
 				CD19EE63940DF97314B08FA4 /* SettingsPresenterImplementation.swift in Sources */,
 				261E4A902781C43C00E8740A /* Number+Strings.swift in Sources */,
 				26C0E75F277E17D600EC78DE /* City.swift in Sources */,

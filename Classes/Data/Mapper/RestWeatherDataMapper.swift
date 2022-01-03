@@ -13,7 +13,11 @@ class RestWeatherDataMapper {
     
     func map(restData: RestWeatherData) -> WeatherData {
         let celsiusTemperature = integerCelsiusTemperature(fromFahrenheitValue: restData.Temperature.Value)
-        return WeatherData(temperature: celsiusTemperature, explanation: restData.IconPhrase)
+        return WeatherData(
+            temperature: celsiusTemperature,
+            explanation: restData.IconPhrase,
+            icon: WeatherIcon(rawValue: restData.WeatherIcon)
+        )
     }
     
     // MARK: - Private
