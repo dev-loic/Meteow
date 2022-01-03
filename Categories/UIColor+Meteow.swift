@@ -10,11 +10,23 @@ import UIKit
 
 extension UIColor {
     
+    class var m_blackPure: UIColor {
+        return UIColor(white: 0.0, alpha: 1.0)
+    }
+    
     class var m_black: UIColor {
         return UIColor(white: 0.16, alpha: 1.0)
     }
     
+    class var m_lightGray: UIColor {
+        return UIColor(white: 0.84, alpha: 1.0)
+    }
+    
     class var m_white: UIColor {
         return UIColor(white: 1.0, alpha: 1.0)
+    }
+    
+    class var m_clear: UIColor {
+        return .clear
     }
 }

@@ -11,4 +11,5 @@ struct WeatherData {
     let temperature: Int
     let explanation: String
     let icon: WeatherIcon?
+    let date: Date?
 }

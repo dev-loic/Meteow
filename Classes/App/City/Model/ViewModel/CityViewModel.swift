@@ -7,6 +7,11 @@
 
 struct CityViewModel {
     let header: CityHeaderViewModel
+    let cells: [CityCellViewModelType]
     
-    static let empty = CityViewModel(header: .empty)
+    static let empty = CityViewModel(header: .empty, cells: [])
+}
+
+enum CityCellViewModelType {
+    case hoursDetails(CityHoursDetailsViewModel)
 }

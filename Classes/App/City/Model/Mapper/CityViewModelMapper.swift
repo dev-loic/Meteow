@@ -12,7 +12,6 @@ class CityViewModelMapper {
     // MARK: - CityViewModelMapper
     
     func map(cityName: String, data: [WeatherData]) -> CityViewModel {
-        // TODO: (Loic Saillant) 2022/01/02 To complete
         guard data.count > 0 else { return .empty }
         let currentWeatherData = data[0]
         let header = CityHeaderViewModel(
@@ -21,6 +20,31 @@ class CityViewModelMapper {
             explanation: currentWeatherData.explanation,
             weatherIconImage: .weatherImage(currentWeatherData.icon)
         )
-        return CityViewModel(header: header)
+        return CityViewModel(
+            header: header,
+            cells: [
+                .hoursDetails(hoursDetailsViewModel(data: data))
+            ]
+        )
+    }
+    
+    // MARK: - Private
+    
+    private func hoursDetailsViewModel(data: [WeatherData]) -> CityHoursDetailsViewModel {
+        let cells = data.enumerated().map { offset, data in
+            CityHoursDetailsCellViewModel(
+                hour: offset == 0 ? "Now" : mapHour(from: data.date),
+                weatherIconImage: .weatherImage(data.icon),
+                temperature: data.temperature.celsiusValue
+            )
+        }
+        return CityHoursDetailsViewModel(cells: cells)
+    }
+    
+    private func mapHour(from date: Date?) -> String {
+        guard let date = date else { return "" }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        return String(format: "hours_format".localized(), dateFormatter.string(from: date))
     }
 }

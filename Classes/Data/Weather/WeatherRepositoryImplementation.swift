@@ -17,7 +17,7 @@ class WeatherRepositoryImplementation: WeatherRepository {
     func retrieveData(cityKey: String, completion: @escaping ([WeatherData]) -> Void) {
         let baseURL = TargetSettings.baseURL
         let apiKey = TargetSettings.accuWeatherApiKey
-        let request = AF.request("\(baseURL)/forecasts/v1/hourly/1hour/\(cityKey)?apikey=\(apiKey)&details=true")
+        let request = AF.request("\(baseURL)/forecasts/v1/hourly/12hour/\(cityKey)?apikey=\(apiKey)&details=true")
         request.responseDecodable { (response: DataResponse<[RestWeatherData], AFError>) in
             switch (response.result) {
             case let .success(data):
