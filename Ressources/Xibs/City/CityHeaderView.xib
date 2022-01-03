@@ -16,13 +16,19 @@
                     <rect key="frame" x="24" y="16" width="419" height="174"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fto-vu-zba">
-                            <rect key="frame" x="0.0" y="0.0" width="419" height="87"/>
+                            <rect key="frame" x="0.0" y="0.0" width="419" height="58"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-2C-KJp">
-                            <rect key="frame" x="0.0" y="87" width="419" height="87"/>
+                            <rect key="frame" x="0.0" y="58" width="419" height="58"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juz-5I-CeS">
+                            <rect key="frame" x="0.0" y="116" width="419" height="58"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -41,6 +47,7 @@
             <connections>
                 <outlet property="cityNameLabel" destination="Fto-vu-zba" id="qpy-Yd-oEl"/>
                 <outlet property="currentTemperatureLabel" destination="lDb-2C-KJp" id="Zpq-lq-5f2"/>
+                <outlet property="explanationLabel" destination="Juz-5I-CeS" id="ZF6-XZ-f0m"/>
                 <outlet property="stackView" destination="Ggw-vJ-loq" id="Rz4-In-I2y"/>
             </connections>
             <point key="canvasLocation" x="170.28985507246378" y="241.74107142857142"/>

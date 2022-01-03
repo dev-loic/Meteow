@@ -10,6 +10,7 @@ import Foundation
 struct CityHeaderViewModel {
     let cityName: String
     let currentTemperature: String
+    let explanation: String
     
-    static let empty = CityHeaderViewModel(cityName: "", currentTemperature: "")
+    static let empty = CityHeaderViewModel(cityName: "", currentTemperature: "", explanation: "")
 }

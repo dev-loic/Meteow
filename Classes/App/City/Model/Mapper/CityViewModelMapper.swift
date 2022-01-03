@@ -14,9 +14,11 @@ class CityViewModelMapper {
     func map(cityName: String, data: [WeatherData]) -> CityViewModel {
         // TODO: (Loic Saillant) 2022/01/02 To complete
         guard data.count > 0 else { return .empty }
+        let currentWeatherData = data[0]
         let header = CityHeaderViewModel(
             cityName: cityName,
-            currentTemperature: String(data[0].temperature.celsiusValue)
+            currentTemperature: String(currentWeatherData.temperature.celsiusValue),
+            explanation: currentWeatherData.explanation
         )
         return CityViewModel(header: header)
     }

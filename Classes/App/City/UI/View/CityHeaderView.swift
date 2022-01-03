@@ -12,6 +12,7 @@ class CityHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var currentTemperatureLabel: UILabel!
+    @IBOutlet private weak var explanationLabel: UILabel!
     
     // MARK: - Lifecycle
     
@@ -25,6 +26,7 @@ class CityHeaderView: UITableViewHeaderFooterView {
     func configure(with viewModel: CityHeaderViewModel) {
         cityNameLabel.text = viewModel.cityName
         currentTemperatureLabel.text = viewModel.currentTemperature
+        explanationLabel.text = viewModel.explanation
     }
 
     // MARK: - Private
@@ -40,7 +42,10 @@ class CityHeaderView: UITableViewHeaderFooterView {
     }
     
     private func setUpLabels() {
-        [cityNameLabel, currentTemperatureLabel].forEach { $0.textAlignment = .center }
+        [cityNameLabel, currentTemperatureLabel, explanationLabel].forEach {
+            $0?.textAlignment = .center
+            $0?.textColor = .m_black
+        }
         cityNameLabel.font = .largeTitle
         currentTemperatureLabel.font = .extraLargeBoldTitle
     }
