@@ -22,4 +22,5 @@ enum CityMoreDetailsType {
     case realFeelTemperature
     case windSpeed
     case windDirection
+    case uvIndex
 }

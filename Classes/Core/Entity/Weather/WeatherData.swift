@@ -14,6 +14,7 @@ struct WeatherData {
     let icon: WeatherIcon?
     let date: Date?
     let wind: WindWeatherData
+    let uvIndex: String
 }
 
 struct WindWeatherData {

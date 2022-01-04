@@ -20,7 +20,8 @@ class RestWeatherDataMapper {
             explanation: restData.IconPhrase,
             icon: WeatherIcon(rawValue: restData.WeatherIcon),
             date: date(from: restData.DateTime),
-            wind: wind(from: restData)
+            wind: wind(from: restData),
+            uvIndex: restData.UVIndexText
         )
     }
     

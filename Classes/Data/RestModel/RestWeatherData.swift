@@ -12,6 +12,7 @@ struct RestWeatherData: Decodable {
     let WeatherIcon: Int
     let DateTime: String
     let Wind: WindData
+    let UVIndexText: String
 }
 
 struct ValueData: Decodable {
