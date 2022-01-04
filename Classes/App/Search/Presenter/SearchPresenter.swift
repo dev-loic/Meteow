@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol SearchPresenterDelegate: AnyObject {
+    func searchPresenter(_ presenter: SearchPresenter, didSelect city: City)
+}
+
 protocol SearchPresenter {
     func start()
     func search(_ query: String)

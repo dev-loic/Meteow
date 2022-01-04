@@ -21,7 +21,7 @@ class CitiesRepositoryImplementation: CitiesRepository {
     func addFavorite(_ city: City) {
         var newFavorites = retrieveFavoriteCities()
         guard !newFavorites.contains(where: { $0.key == city.key }) else { return }
-        newFavorites.append(city)
+        newFavorites.insert(city, at: 0)
         setValue(encodeCities(newFavorites), for: .favoriteCities)
     }
     

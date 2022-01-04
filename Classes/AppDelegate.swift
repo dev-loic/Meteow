@@ -12,6 +12,7 @@ import ADUtils
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private lazy var tabBarController = UITabBarController()
     private lazy var controllers: [UINavigationController] = createControllers()
 
     func application(_ application: UIApplication,
@@ -19,12 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        let viewController = UITabBarController()
-        viewController.tabBar.tintColor = .m_black
-        viewController.view.backgroundColor = .m_white
-        viewController.setViewControllers(controllers, animated: false)
+        tabBarController.tabBar.tintColor = .m_black
+        tabBarController.view.backgroundColor = .m_white
+        tabBarController.setViewControllers(controllers, animated: false)
         
-        window.rootViewController = viewController
+        window.rootViewController = tabBarController
         window.makeKeyAndVisible()
         
         return true
@@ -78,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             searchRepository: searchRepository,
             citiesRepository: citiesRepository
         )
+        presenter.delegate = self
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
@@ -101,6 +102,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
+    }
+}
+
+extension AppDelegate: SearchPresenterDelegate {
+    
+    // MARK: - SearchPresenterDelegate
+    
+    func searchPresenter(_ presenter: SearchPresenter, didSelect city: City) {
+        tabBarController.selectedIndex = 0
     }
 }
 

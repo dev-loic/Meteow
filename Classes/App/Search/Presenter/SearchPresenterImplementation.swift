@@ -10,6 +10,8 @@ import Foundation
 
 class SearchPresenterImplementation: SearchPresenter {
 
+    weak var delegate: SearchPresenterDelegate?
+    
     private let searchRepository: SearchRepository
     private let citiesRepository: CitiesRepository
     private weak var viewContract: SearchViewContract?
@@ -46,5 +48,6 @@ class SearchPresenterImplementation: SearchPresenter {
         // TODO: (Loic Saillant) 2021/12/30 Should have a mapper here
         let city = City(key: citySearchResult.key, name: citySearchResult.name)
         citiesRepository.addFavorite(city)
+        delegate?.searchPresenter(self, didSelect: city)
     }
 }
