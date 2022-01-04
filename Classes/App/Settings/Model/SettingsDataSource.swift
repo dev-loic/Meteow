@@ -41,8 +41,12 @@ extension SettingsDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.sections[indexPath.section].cells[indexPath.row].title
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        var configuration = cell.defaultContentConfiguration()
+        let cellViewModel = viewModel.sections[indexPath.section].cells[indexPath.row]
+        configuration.text = cellViewModel.title
+        configuration.secondaryText = cellViewModel.description
+        cell.contentConfiguration = configuration
         cell.selectionStyle = .none
         return cell
     }

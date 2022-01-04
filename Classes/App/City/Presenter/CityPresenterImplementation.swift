@@ -25,7 +25,7 @@ class CityPresenterImplementation: CityPresenter {
 
     func start() {
         weatherRepository.retrieveData(cityKey: city.key) { data in
-            let viewModel = self.mapper.map(cityName: self.city.name, data: data)
+            let viewModel = self.mapper.map(city: self.city, data: data)
             self.viewContract?.display(viewModel)
         }
     }

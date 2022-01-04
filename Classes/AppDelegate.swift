@@ -96,7 +96,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         let viewController = SettingsViewController()
         let citiesRepository = CitiesRepositoryImplementation()
-        let presenter = SettingsPresenterImplementation(viewContract: viewController, citiesRepository: citiesRepository)
+        let settingsRepository = SettingsRepositoryImplementation()
+        let presenter = SettingsPresenterImplementation(
+            viewContract: viewController,
+            citiesRepository: citiesRepository,
+            settingsRepository: settingsRepository
+        )
         presenter.delegate = self
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)

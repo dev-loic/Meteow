@@ -9,12 +9,14 @@ import UIKit
 
 struct CityHeaderViewModel {
     let cityName: String
+    let countryName: String
     let currentTemperature: String
     let explanation: String
     let weatherIconImage: UIImage?
     
     static let empty = CityHeaderViewModel(
         cityName: "",
+        countryName: "",
         currentTemperature: "",
         explanation: "",
         weatherIconImage: nil

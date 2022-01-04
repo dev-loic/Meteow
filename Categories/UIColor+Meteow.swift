@@ -18,6 +18,10 @@ extension UIColor {
         return UIColor(white: 0.16, alpha: 1.0)
     }
     
+    class var m_gray: UIColor {
+        return UIColor(white: 0.32, alpha: 1.0)
+    }
+    
     class var m_lightGray: UIColor {
         return UIColor(white: 0.84, alpha: 1.0)
     }

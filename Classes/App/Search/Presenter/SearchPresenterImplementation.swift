@@ -46,7 +46,11 @@ class SearchPresenterImplementation: SearchPresenter {
     func selectCity(at index: Int) {
         let citySearchResult = searchResults[index]
         // TODO: (Loic Saillant) 2021/12/30 Should have a mapper here
-        let city = City(key: citySearchResult.key, name: citySearchResult.name)
+        let city = City(
+            key: citySearchResult.key,
+            name: citySearchResult.name,
+            countryName: citySearchResult.country.name
+        )
         citiesRepository.addFavorite(city)
         delegate?.searchPresenter(self, didSelect: city)
     }
