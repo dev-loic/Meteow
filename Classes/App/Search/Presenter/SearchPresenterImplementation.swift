@@ -59,6 +59,11 @@ class SearchPresenterImplementation: SearchPresenter {
     }
     
     func removeFavorite(at index: Int) {
-        // TODO: (Loic Saillant) 2022/01/04 To implement
+        let favoriteCity = favoriteCities[index]
+        citiesRepository.removeFavorite(favoriteCity)
+        start()
+        if favoriteCities.count == 0 {
+            delegate?.searchPresenterDidRemoveAllCities(self)
+        }
     }
 }

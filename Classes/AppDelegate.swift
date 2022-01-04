@@ -126,8 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.setViewControllers(controllers, animated: true)
         tabBarController.selectedIndex = 0
     }
-    
-    // TODO: (Loic Saillant) 2022/01/04 To use via SearchViewController
+
     private func removeCitiesNavigationController() {
         createControllers()
         tabBarController.setViewControllers(controllers, animated: true)
@@ -141,5 +140,9 @@ extension AppDelegate: SearchPresenterDelegate {
     
     func searchPresenter(_ presenter: SearchPresenter, didSelect city: City) {
         appendCitiesNavigationControllerIfNeededAndDisplay()
+    }
+    
+    func searchPresenterDidRemoveAllCities(_ presenter: SearchPresenter) {
+        removeCitiesNavigationController()
     }
 }

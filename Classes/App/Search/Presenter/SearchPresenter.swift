@@ -10,6 +10,7 @@ import Foundation
 
 protocol SearchPresenterDelegate: AnyObject {
     func searchPresenter(_ presenter: SearchPresenter, didSelect city: City)
+    func searchPresenterDidRemoveAllCities(_ presenter: SearchPresenter)
 }
 
 protocol SearchPresenter {
