@@ -23,11 +23,18 @@ class SettingsPresenterImplementation: SettingsPresenter {
     // MARK: - SettingsPresenter
 
     func start() {
-        favoriteCities = citiesRepository.retrieveFavoriteCities()
-        viewContract?.display(mapper.map(fromFavoriteCities: favoriteCities))
+        refresh()
     }
     
     func removeFavorite(at index: Int) {
         citiesRepository.removeFavorite(favoriteCities[index])
+        refresh()
+    }
+    
+    // MARK: - Private
+    
+    private func refresh() {
+        favoriteCities = citiesRepository.retrieveFavoriteCities()
+        viewContract?.display(mapper.map(fromFavoriteCities: favoriteCities))
     }
 }
