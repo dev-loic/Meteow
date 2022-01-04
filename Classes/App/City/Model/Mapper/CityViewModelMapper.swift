@@ -50,7 +50,25 @@ class CityViewModelMapper {
     }
     
     private func moreDetailsViewModel(data: [WeatherData]) -> CityMoreDetailsViewModel {
-        // TODO: (Loic Saillant) 2022/01/03 To implement
-        return CityMoreDetailsViewModel(cells: [])
+        let moreDetails: [CityMoreDetailsType] = [.realFeelTemperature]
+        let cells = moreDetails.map { cityMoreDetailsCellViewModel(for: $0, data[0]) }
+        return CityMoreDetailsViewModel(cells: cells)
+    }
+    
+    private func cityMoreDetailsCellViewModel(for type: CityMoreDetailsType,
+                                              _ data: WeatherData) -> CityMoreDetailsCellViewModel {
+        let value: String
+        switch type {
+        case .realFeelTemperature:
+            value = data.realFeelTemperature.celsiusValue
+        }
+        return CityMoreDetailsCellViewModel(title: title(for: type), value: value)
+    }
+    
+    private func title(for type: CityMoreDetailsType) -> String {
+        switch type {
+        case .realFeelTemperature:
+            return "real_feel_temperature_title".localized()
+        }
     }
 }

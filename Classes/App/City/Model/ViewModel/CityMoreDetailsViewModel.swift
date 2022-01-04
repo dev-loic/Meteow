@@ -17,3 +17,7 @@ struct CityMoreDetailsCellViewModel {
     let title: String
     let value: String
 }
+
+enum CityMoreDetailsType {
+    case realFeelTemperature
+}

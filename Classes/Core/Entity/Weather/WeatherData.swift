@@ -9,6 +9,7 @@ import Foundation
 
 struct WeatherData {
     let temperature: Int
+    let realFeelTemperature: Int
     let explanation: String
     let icon: WeatherIcon?
     let date: Date?

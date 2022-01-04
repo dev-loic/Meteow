@@ -25,3 +25,6 @@
 // Strings
 "celsius_format" = "%1$@°C";
 "hours_format" = "%1$@h";
+
+// CityMoreDetails
+"real_feel_temperature_title" = "RealFeel®";
