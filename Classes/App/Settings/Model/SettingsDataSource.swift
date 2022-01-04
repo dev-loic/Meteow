@@ -43,6 +43,7 @@ extension SettingsDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = viewModel.sections[indexPath.section].cells[indexPath.row].title
+        cell.selectionStyle = .none
         return cell
     }
     
