@@ -96,7 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createSettingsNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         let viewController = SettingsViewController()
-        let presenter = SettingsPresenterImplementation(viewContract: viewController)
+        let citiesRepository = CitiesRepositoryImplementation()
+        let presenter = SettingsPresenterImplementation(viewContract: viewController, citiesRepository: citiesRepository)
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController

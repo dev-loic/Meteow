@@ -11,14 +11,18 @@ import Foundation
 class SettingsPresenterImplementation: SettingsPresenter {
 
     private weak var viewContract: SettingsViewContract?
+    private let citiesRepository: CitiesRepository
+    private lazy var mapper = SettingsViewModelMapper()
 
-    init(viewContract: SettingsViewContract) {
+    init(viewContract: SettingsViewContract, citiesRepository: CitiesRepository) {
         self.viewContract = viewContract
+        self.citiesRepository = citiesRepository
     }
 
     // MARK: - SettingsPresenter
 
     func start() {
-        // TODO: (Loic Saillant) 2021/12/30 To complete
+        let favoriteCities = citiesRepository.retrieveFavoriteCities()
+        viewContract?.display(mapper.map(fromFavoriteCities: favoriteCities))
     }
 }
