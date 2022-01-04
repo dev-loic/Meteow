@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol SettingsPresenterDelegate: AnyObject {
+    func settingsPresenterDidRemoveAllCities(_ presenter: SettingsPresenter)
+}
+
 protocol SettingsPresenter {
     func start()
+    func removeFavorite(at index: Int)
 }

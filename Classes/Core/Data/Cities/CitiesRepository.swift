@@ -8,6 +8,8 @@
 import Foundation
 
 protocol CitiesRepository {
+    var hasFavorites: Bool { get }
     func addFavorite(_ city: City)
+    func removeFavorite(_ city: City)
     func retrieveFavoriteCities() -> [City]
 }

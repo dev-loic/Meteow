@@ -10,4 +10,5 @@ import Foundation
 
 protocol CitiesPresenter {
     func start()
+    func refreshIfNeeded()
 }

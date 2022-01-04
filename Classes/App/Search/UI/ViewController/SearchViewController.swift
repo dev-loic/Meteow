@@ -64,7 +64,10 @@ extension SearchViewController: SearchDataSourceDelegate {
         let alertViewModel = AlertViewModel(title: "search_add_favorite_title".localized())
         presentAlert(.cancelable(alertViewModel)) { [weak self] actionType in
             guard actionType == .confirm else { return }
+            // TODO: (Loic Saillant) 2022/01/04 Should be done properly in presenter
             self?.presenter?.selectCity(at: index)
+            self?.searchBar.text = ""
+            self?.presenter?.clearSearch()
         }
     }
 }

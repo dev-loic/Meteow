@@ -12,19 +12,21 @@ import ADUtils
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private lazy var controllers: [UINavigationController] = createControllers()
+    private lazy var tabBarController = UITabBarController()
+    private var controllers: [UINavigationController] = []
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        let viewController = UITabBarController()
-        viewController.tabBar.tintColor = .m_black
-        viewController.view.backgroundColor = .m_white
-        viewController.setViewControllers(controllers, animated: false)
+        createControllers()
         
-        window.rootViewController = viewController
+        tabBarController.tabBar.tintColor = .m_black
+        tabBarController.view.backgroundColor = .m_white
+        tabBarController.setViewControllers(controllers, animated: false)
+        
+        window.rootViewController = tabBarController
         window.makeKeyAndVisible()
         
         return true
@@ -32,8 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Private
     
-    private func createControllers() -> [UINavigationController] {
-        var controllers: [UINavigationController] = []
+    private func createControllers() {
+        
+        controllers = []
         
         // MARK: Search
         
@@ -41,19 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         searchNavigationController.tabBarItem = UITabBarItem(
             title: "tab_search_title".localized(),
             image: .search,
-            tag: 1
-        )
-        controllers.append(searchNavigationController)
-        
-        // MARK: Cities
-        
-        let citiesNavigationController = createCitiesNavigationController()
-        citiesNavigationController.tabBarItem = UITabBarItem(
-            title: "tab_cities_title".localized(),
-            image: .sun,
             tag: 2
         )
-        controllers.append(citiesNavigationController)
+        controllers.append(searchNavigationController)
         
         // MARK: Settings
         
@@ -64,8 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tag: 3
         )
         controllers.append(settingsNavigationController)
-
-        return controllers
+        
+        // MARK: - Cities
+        
+        let citiesRepository = CitiesRepositoryImplementation()
+        if (citiesRepository.hasFavorites) {
+            appendCitiesNavigationControllerIfNeededAndDisplay()
+        }
     }
     
     private func createSearchNavigationController() -> UINavigationController {
@@ -78,6 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             searchRepository: searchRepository,
             citiesRepository: citiesRepository
         )
+        presenter.delegate = self
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
@@ -96,10 +95,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createSettingsNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         let viewController = SettingsViewController()
-        let presenter = SettingsPresenterImplementation(viewContract: viewController)
+        let citiesRepository = CitiesRepositoryImplementation()
+        let presenter = SettingsPresenterImplementation(viewContract: viewController, citiesRepository: citiesRepository)
+        presenter.delegate = self
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
     }
+    
+    private func appendCitiesNavigationControllerIfNeededAndDisplay() {
+        guard !controllers.contains(where: { $0.viewControllers.first as? CitiesViewController != nil }) else {
+            tabBarController.selectedIndex = 0
+            return
+        }
+        let citiesNavigationController = createCitiesNavigationController()
+        citiesNavigationController.tabBarItem = UITabBarItem(
+            title: "tab_cities_title".localized(),
+            image: .sun,
+            tag: 1
+        )
+        controllers.insert(citiesNavigationController, at: 0)
+        tabBarController.setViewControllers(controllers, animated: true)
+        tabBarController.selectedIndex = 0
+    }
+    
+    private func removeCitiesNavigationController() {
+        createControllers()
+        tabBarController.setViewControllers(controllers, animated: true)
+        tabBarController.selectedIndex = 0
+    }
 }
 
+extension AppDelegate: SearchPresenterDelegate {
+    
+    // MARK: - SearchPresenterDelegate
+    
+    func searchPresenter(_ presenter: SearchPresenter, didSelect city: City) {
+        appendCitiesNavigationControllerIfNeededAndDisplay()
+    }
+}
+
+extension AppDelegate: SettingsPresenterDelegate {
+    
+    // MARK: - SettingsPresenterDelegate
+    
+    func settingsPresenterDidRemoveAllCities(_ presenter: SettingsPresenter) {
+        removeCitiesNavigationController()
+    }
+}

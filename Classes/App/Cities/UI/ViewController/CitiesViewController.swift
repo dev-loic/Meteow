@@ -23,6 +23,11 @@ class CitiesViewController: UIViewController {
         presenter?.start()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.refreshIfNeeded()
+    }
+    
     // MARK: - Private
     
     private func createPageViewController() -> UIPageViewController {
