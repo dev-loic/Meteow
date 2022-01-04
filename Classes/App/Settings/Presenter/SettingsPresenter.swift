@@ -10,4 +10,5 @@ import Foundation
 
 protocol SettingsPresenter {
     func start()
+    func removeFavorite(at index: Int)
 }

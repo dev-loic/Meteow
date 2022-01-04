@@ -13,6 +13,7 @@ class SettingsPresenterImplementation: SettingsPresenter {
     private weak var viewContract: SettingsViewContract?
     private let citiesRepository: CitiesRepository
     private lazy var mapper = SettingsViewModelMapper()
+    private var favoriteCities: [City] = []
 
     init(viewContract: SettingsViewContract, citiesRepository: CitiesRepository) {
         self.viewContract = viewContract
@@ -22,7 +23,11 @@ class SettingsPresenterImplementation: SettingsPresenter {
     // MARK: - SettingsPresenter
 
     func start() {
-        let favoriteCities = citiesRepository.retrieveFavoriteCities()
+        favoriteCities = citiesRepository.retrieveFavoriteCities()
         viewContract?.display(mapper.map(fromFavoriteCities: favoriteCities))
+    }
+    
+    func removeFavorite(at index: Int) {
+        citiesRepository.removeFavorite(favoriteCities[index])
     }
 }

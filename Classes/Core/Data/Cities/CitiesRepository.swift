@@ -9,5 +9,6 @@ import Foundation
 
 protocol CitiesRepository {
     func addFavorite(_ city: City)
+    func removeFavorite(_ city: City)
     func retrieveFavoriteCities() -> [City]
 }

@@ -58,6 +58,6 @@ extension SettingsViewController: SettingsDataSourceDelegate {
     // MARK: - SettingsDataSourceDelegate
     
     func settingsDataSource(_ dataSource: SettingsDataSource, didCommitDeleteAt indexPath: IndexPath) {
-        // TODO: (Loic Saillant) 2022/01/04 To complete
+        presenter?.removeFavorite(at: indexPath.row)
     }
 }

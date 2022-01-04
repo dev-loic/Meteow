@@ -25,6 +25,13 @@ class CitiesRepositoryImplementation: CitiesRepository {
         setValue(encodeCities(newFavorites), for: .favoriteCities)
     }
     
+    func removeFavorite(_ city: City) {
+        var currentFavorites = retrieveFavoriteCities()
+        guard let index = currentFavorites.firstIndex(where: { $0.key == city.key }) else { return }
+        currentFavorites.remove(at: index)
+        setValue(encodeCities(currentFavorites), for: .favoriteCities)
+    }
+    
     func retrieveFavoriteCities() -> [City] {
         guard let data = readData(for: .favoriteCities) else { return [] }
         return decodeCities(from: data)
