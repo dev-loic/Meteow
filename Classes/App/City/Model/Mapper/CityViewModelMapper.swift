@@ -50,7 +50,7 @@ class CityViewModelMapper {
     }
     
     private func moreDetailsViewModel(data: [WeatherData]) -> CityMoreDetailsViewModel {
-        let moreDetails: [CityMoreDetailsType] = [.realFeelTemperature]
+        let moreDetails: [CityMoreDetailsType] = [.realFeelTemperature, .windSpeed, .windDirection]
         let cells = moreDetails.map { cityMoreDetailsCellViewModel(for: $0, data[0]) }
         return CityMoreDetailsViewModel(cells: cells)
     }
@@ -61,6 +61,10 @@ class CityViewModelMapper {
         switch type {
         case .realFeelTemperature:
             value = data.realFeelTemperature.celsiusValue
+        case .windSpeed:
+            value = data.wind.speed.kmhValue
+        case .windDirection:
+            value = data.wind.direction
         }
         return CityMoreDetailsCellViewModel(title: title(for: type), value: value)
     }
@@ -69,6 +73,10 @@ class CityViewModelMapper {
         switch type {
         case .realFeelTemperature:
             return "real_feel_temperature_title".localized()
+        case .windSpeed:
+            return "wind_speed_title".localized()
+        case .windDirection:
+            return "wind_direction_title".localized()
         }
     }
 }

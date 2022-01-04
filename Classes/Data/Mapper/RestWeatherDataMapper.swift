@@ -19,7 +19,8 @@ class RestWeatherDataMapper {
             realFeelTemperature: celsiusRealFeelTemperature,
             explanation: restData.IconPhrase,
             icon: WeatherIcon(rawValue: restData.WeatherIcon),
-            date: date(from: restData.DateTime)
+            date: date(from: restData.DateTime),
+            wind: wind(from: restData)
         )
     }
     
@@ -32,5 +33,17 @@ class RestWeatherDataMapper {
     
     private func date(from value: String) -> Date? {
         return try? Date(value, strategy: .iso8601)
+    }
+    
+    private func wind(from data: RestWeatherData) -> WindWeatherData {
+        return WindWeatherData(
+            speed: integerKilometersPerHourSpeed(fromSpeed: data.Wind.Speed.Value),
+            direction: data.Wind.Direction.Localized
+        )
+    }
+    
+    private func integerKilometersPerHourSpeed(fromSpeed speed: Double) -> Int {
+        let kmhValue = speed * 1.60934
+        return Int(round(kmhValue))
     }
 }

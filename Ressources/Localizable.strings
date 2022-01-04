@@ -25,6 +25,9 @@
 // Strings
 "celsius_format" = "%1$@°C";
 "hours_format" = "%1$@h";
+"kmh_format" = "%1$@km/h";
 
 // CityMoreDetails
 "real_feel_temperature_title" = "RealFeel®";
+"wind_speed_title" = "Wind speed";
+"wind_direction_title" = "Wind Direction";

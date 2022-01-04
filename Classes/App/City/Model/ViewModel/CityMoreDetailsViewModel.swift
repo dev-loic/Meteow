@@ -20,4 +20,6 @@ struct CityMoreDetailsCellViewModel {
 
 enum CityMoreDetailsType {
     case realFeelTemperature
+    case windSpeed
+    case windDirection
 }

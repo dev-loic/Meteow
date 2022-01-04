@@ -10,4 +10,8 @@ extension Int {
     var celsiusValue: String {
         return String(format: "celsius_format".localized(), String(self))
     }
+    
+    var kmhValue: String {
+        return String(format: "kmh_format".localized(), String(self))
+    }
 }

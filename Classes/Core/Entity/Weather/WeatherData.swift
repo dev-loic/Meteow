@@ -13,4 +13,10 @@ struct WeatherData {
     let explanation: String
     let icon: WeatherIcon?
     let date: Date?
+    let wind: WindWeatherData
+}
+
+struct WindWeatherData {
+    let speed: Int
+    let direction: String
 }

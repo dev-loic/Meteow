@@ -70,5 +70,8 @@ class CityMoreDetailsCellCollectionViewCell: UICollectionViewCell {
         [titleLabel, valueLabel].forEach { $0.textColor = .m_blackPure }
         titleLabel.font = .boldText
         valueLabel.font = .bigTitle
+        valueLabel.numberOfLines = 1
+        valueLabel.minimumScaleFactor = 0.5
+        valueLabel.adjustsFontSizeToFitWidth = true
     }
 }
