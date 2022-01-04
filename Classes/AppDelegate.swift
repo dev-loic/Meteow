@@ -35,25 +35,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createControllers() -> [UINavigationController] {
         var controllers: [UINavigationController] = []
         
-        // MARK: Search
-        
-        let searchNavigationController = createSearchNavigationController()
-        searchNavigationController.tabBarItem = UITabBarItem(
-            title: "tab_search_title".localized(),
-            image: .search,
-            tag: 1
-        )
-        controllers.append(searchNavigationController)
-        
         // MARK: Cities
         
         let citiesNavigationController = createCitiesNavigationController()
         citiesNavigationController.tabBarItem = UITabBarItem(
             title: "tab_cities_title".localized(),
             image: .sun,
-            tag: 2
+            tag: 1
         )
         controllers.append(citiesNavigationController)
+        
+        // MARK: Search
+        
+        let searchNavigationController = createSearchNavigationController()
+        searchNavigationController.tabBarItem = UITabBarItem(
+            title: "tab_search_title".localized(),
+            image: .search,
+            tag: 2
+        )
+        controllers.append(searchNavigationController)
         
         // MARK: Settings
         
