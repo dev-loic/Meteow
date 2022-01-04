@@ -13,12 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private lazy var tabBarController = UITabBarController()
-    private lazy var controllers: [UINavigationController] = createControllers()
+    private var controllers: [UINavigationController] = []
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
+        
+        createControllers()
         
         tabBarController.tabBar.tintColor = .m_black
         tabBarController.view.backgroundColor = .m_white
@@ -32,8 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Private
     
-    private func createControllers() -> [UINavigationController] {
-        var controllers: [UINavigationController] = []
+    private func createControllers() {
+        
+        controllers = []
         
         // MARK: Search
         
@@ -54,8 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tag: 3
         )
         controllers.append(settingsNavigationController)
-
-        return controllers
+        
+        // MARK: - Cities
+        
+        let citiesRepository = CitiesRepositoryImplementation()
+        if (citiesRepository.hasFavorites) {
+            appendCitiesNavigationControllerIfNeededAndDisplay()
+        }
     }
     
     private func createSearchNavigationController() -> UINavigationController {
@@ -89,6 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = SettingsViewController()
         let citiesRepository = CitiesRepositoryImplementation()
         let presenter = SettingsPresenterImplementation(viewContract: viewController, citiesRepository: citiesRepository)
+        presenter.delegate = self
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
@@ -109,6 +118,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.setViewControllers(controllers, animated: true)
         tabBarController.selectedIndex = 0
     }
+    
+    private func removeCitiesNavigationController() {
+        createControllers()
+        tabBarController.setViewControllers(controllers, animated: true)
+        tabBarController.selectedIndex = 0
+    }
 }
 
 extension AppDelegate: SearchPresenterDelegate {
@@ -120,3 +135,11 @@ extension AppDelegate: SearchPresenterDelegate {
     }
 }
 
+extension AppDelegate: SettingsPresenterDelegate {
+    
+    // MARK: - SettingsPresenterDelegate
+    
+    func settingsPresenterDidRemoveAllCities(_ presenter: SettingsPresenter) {
+        removeCitiesNavigationController()
+    }
+}

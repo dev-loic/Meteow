@@ -18,6 +18,10 @@ class CitiesRepositoryImplementation: CitiesRepository {
     
     // MARK: - CitiesRepository
     
+    var hasFavorites: Bool {
+        return retrieveFavoriteCities().count > 0
+    }
+    
     func addFavorite(_ city: City) {
         var newFavorites = retrieveFavoriteCities()
         guard !newFavorites.contains(where: { $0.key == city.key }) else { return }

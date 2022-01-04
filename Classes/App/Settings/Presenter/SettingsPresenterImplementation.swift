@@ -10,6 +10,8 @@ import Foundation
 
 class SettingsPresenterImplementation: SettingsPresenter {
 
+    weak var delegate: SettingsPresenterDelegate?
+    
     private weak var viewContract: SettingsViewContract?
     private let citiesRepository: CitiesRepository
     private lazy var mapper = SettingsViewModelMapper()
@@ -28,6 +30,9 @@ class SettingsPresenterImplementation: SettingsPresenter {
     
     func removeFavorite(at index: Int) {
         citiesRepository.removeFavorite(favoriteCities[index])
+        if (!citiesRepository.hasFavorites) {
+            delegate?.settingsPresenterDidRemoveAllCities(self)
+        }
         refresh()
     }
     
