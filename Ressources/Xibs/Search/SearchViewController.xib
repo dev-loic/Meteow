@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <searchBar opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hqj-xv-RoI">
-                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                    <rect key="frame" x="8" y="44" width="398" height="51"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
@@ -35,10 +35,10 @@
             <constraints>
                 <constraint firstItem="hqj-xv-RoI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="U8I-ps-mjL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OEq-Gm-j8C" secondAttribute="trailing" id="Zzf-Iw-GDS"/>
-                <constraint firstItem="hqj-xv-RoI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dHe-sp-OtC"/>
+                <constraint firstItem="hqj-xv-RoI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="dHe-sp-OtC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OEq-Gm-j8C" secondAttribute="bottom" constant="8" id="hI2-o2-c87"/>
                 <constraint firstItem="OEq-Gm-j8C" firstAttribute="top" secondItem="hqj-xv-RoI" secondAttribute="bottom" constant="8" id="lO6-Dz-xMY"/>
-                <constraint firstItem="hqj-xv-RoI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="niJ-rd-ud1"/>
+                <constraint firstItem="hqj-xv-RoI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-8" id="niJ-rd-ud1"/>
                 <constraint firstItem="OEq-Gm-j8C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ofS-lK-TUj"/>
             </constraints>
             <point key="canvasLocation" x="139" y="110"/>
