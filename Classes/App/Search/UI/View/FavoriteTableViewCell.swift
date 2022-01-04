@@ -33,6 +33,6 @@ class FavoriteTableViewCell: UITableViewCell {
     // MARK: - Private
     
     private func setup() {
-        // TODO: (Loic Saillant) 2021/12/30 To complete
+        selectionStyle = .none
     }
 }

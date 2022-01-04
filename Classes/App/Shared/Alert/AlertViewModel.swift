@@ -9,6 +9,7 @@ import Foundation
 
 enum AlertViewModelType {
     case cancelable(AlertViewModel)
+    case destructive(AlertViewModel)
 }
 
 struct AlertViewModel {

@@ -99,14 +99,23 @@ extension SearchViewController: SearchDataSourceDelegate {
     
     // MARK: - SearchDataSourceDelegate
     
-    func searchDataSource(_ dataSource: SearchDataSource, didSelectCityAt index: Int) {
+    func searchDataSource(_ dataSource: SearchDataSource, didSelectCityAt indexPath: IndexPath) {
         let alertViewModel = AlertViewModel(title: "search_add_favorite_title".localized())
         presentAlert(.cancelable(alertViewModel)) { [weak self] actionType in
             guard actionType == .confirm else { return }
             // TODO: (Loic Saillant) 2022/01/04 Should be done properly in presenter
-            self?.presenter?.selectCity(at: index)
+            self?.presenter?.selectCity(at: indexPath.row)
             self?.searchBar.resignFirstResponder()
             self?.searchBar.text = ""
+        }
+    }
+    
+    func searchDataSource(_ dataSource: SearchDataSource, didCommitDeleteAt indexPath: IndexPath) {
+        let alertViewModel = AlertViewModel(title: "search_delete_favorite_title".localized())
+        presentAlert(.destructive(alertViewModel)) { [weak self] actionType in
+            guard actionType == .delete else { return }
+            // TODO: (Loic Saillant) 2022/01/04 Should be done properly in presenter
+            self?.presenter?.removeFavorite(at: indexPath.row)
         }
     }
 }

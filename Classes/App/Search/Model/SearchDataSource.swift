@@ -9,7 +9,8 @@ import Foundation
 import ADUtils
 
 protocol SearchDataSourceDelegate: AnyObject {
-    func searchDataSource(_ dataSource: SearchDataSource, didSelectCityAt index: Int)
+    func searchDataSource(_ dataSource: SearchDataSource, didSelectCityAt indexPath: IndexPath)
+    func searchDataSource(_ dataSource: SearchDataSource, didCommitDeleteAt indexPath: IndexPath)
 }
 
 class SearchDataSource: NSObject {
@@ -62,7 +63,21 @@ extension SearchDataSource: UITableViewDataSource {
             cell.configure(with: cellViewModel)
             return cell
         }
-        
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let viewModel = viewModel.sections[indexPath.section].cells[indexPath.row]
+        switch viewModel {
+        case .searchResult:
+            return false
+        case .favorite:
+            return true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard case .delete = editingStyle else { return }
+        delegate?.searchDataSource(self, didCommitDeleteAt: indexPath)
     }
 }
 
@@ -75,6 +90,8 @@ extension SearchDataSource: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.searchDataSource(self, didSelectCityAt: indexPath.row)
+        let viewModel = viewModel.sections[indexPath.section].cells[indexPath.row]
+        guard case .searchResult = viewModel else { return }
+        delegate?.searchDataSource(self, didSelectCityAt: indexPath)
     }
 }

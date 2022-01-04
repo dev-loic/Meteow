@@ -11,6 +11,7 @@
 "search_navigation_bar_title" = "Favorite Cities 🌇";
 "search_bar_placeholder" = "Type city name you like";
 "search_add_favorite_title" = "Add to favorites?";
+"search_delete_favorite_title" = "Remove favorite?";
 "search_results_section_title" = "Search Results";
 "search_favorites_section_title" = "Favorites";
 "search_placeholder_text" = "⬆️\n\nStart by adding your first favorite city using search bar above";
@@ -27,6 +28,7 @@
 // Alert
 "alert_cancel_button_title" = "Cancel";
 "alert_confirm_button_title" = "Confirm";
+"alert_delete_button_title" = "Delete";
 
 // Strings
 "celsius_format" = "%1$@°C";

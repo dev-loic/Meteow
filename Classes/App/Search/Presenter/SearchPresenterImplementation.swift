@@ -57,4 +57,8 @@ class SearchPresenterImplementation: SearchPresenter {
         citiesRepository.addFavorite(city)
         delegate?.searchPresenter(self, didSelect: city)
     }
+    
+    func removeFavorite(at index: Int) {
+        // TODO: (Loic Saillant) 2022/01/04 To implement
+    }
 }

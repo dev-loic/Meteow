@@ -17,4 +17,5 @@ protocol SearchPresenter {
     func search(_ query: String)
     func clearSearch()
     func selectCity(at index: Int)
+    func removeFavorite(at index: Int)
 }
