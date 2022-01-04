@@ -101,14 +101,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createSettingsNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         let viewController = SettingsViewController()
-        let citiesRepository = CitiesRepositoryImplementation()
         let settingsRepository = SettingsRepositoryImplementation()
         let presenter = SettingsPresenterImplementation(
             viewContract: viewController,
-            citiesRepository: citiesRepository,
             settingsRepository: settingsRepository
         )
-        presenter.delegate = self
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
@@ -130,6 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.selectedIndex = 0
     }
     
+    // TODO: (Loic Saillant) 2022/01/04 To use via SearchViewController
     private func removeCitiesNavigationController() {
         createControllers()
         tabBarController.setViewControllers(controllers, animated: true)
@@ -143,14 +141,5 @@ extension AppDelegate: SearchPresenterDelegate {
     
     func searchPresenter(_ presenter: SearchPresenter, didSelect city: City) {
         appendCitiesNavigationControllerIfNeededAndDisplay()
-    }
-}
-
-extension AppDelegate: SettingsPresenterDelegate {
-    
-    // MARK: - SettingsPresenterDelegate
-    
-    func settingsPresenterDidRemoveAllCities(_ presenter: SettingsPresenter) {
-        removeCitiesNavigationController()
     }
 }

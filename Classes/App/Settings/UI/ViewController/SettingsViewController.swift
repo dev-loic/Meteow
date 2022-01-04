@@ -42,7 +42,6 @@ class SettingsViewController: UIViewController {
     
     private func createDataSource() -> SettingsDataSource {
         let dataSource = SettingsDataSource()
-        dataSource.delegate = self
         return dataSource
     }
 }
@@ -54,14 +53,5 @@ extension SettingsViewController: SettingsViewContract {
     func display(_ viewModel: SettingsViewModel) {
         dataSource.configure(with: viewModel)
         tableView.reloadData()
-    }
-}
-
-extension SettingsViewController: SettingsDataSourceDelegate {
-
-    // MARK: - SettingsDataSourceDelegate
-    
-    func settingsDataSource(_ dataSource: SettingsDataSource, didCommitDeleteAt indexPath: IndexPath) {
-        presenter?.removeFavorite(at: indexPath.row)
     }
 }
