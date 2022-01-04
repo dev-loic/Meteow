@@ -8,10 +8,10 @@
 
 // Search
 "tab_search_title" = "Search";
-"search_navigation_bar_title" = "Select your favorite cities 🌇";
-"search_bar_placeholder" = "Type city name";
+"search_navigation_bar_title" = "Favorite Cities 🌇";
+"search_bar_placeholder" = "Type city name you like";
 "search_add_favorite_title" = "Add to favorites?";
-"search_results_section_title" = "Search results";
+"search_results_section_title" = "Search Results";
 "search_favorites_section_title" = "Favorites";
 
 // Cities
