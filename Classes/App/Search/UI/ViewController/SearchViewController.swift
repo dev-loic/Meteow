@@ -70,6 +70,7 @@ extension SearchViewController: SearchDataSourceDelegate {
             guard actionType == .confirm else { return }
             // TODO: (Loic Saillant) 2022/01/04 Should be done properly in presenter
             self?.presenter?.selectCity(at: index)
+            self?.searchBar.resignFirstResponder()
             self?.searchBar.text = ""
             self?.presenter?.clearSearch()
         }
@@ -84,6 +85,7 @@ extension SearchViewController: UISearchBarDelegate {
         // ???: (Loic Saillant) 2021/12/30 I choose not to send a request at each letter,
         // like a true autocomplete because I am limited to 50 calls/day with free plan
         guard let query = searchBar.text else { return }
+        searchBar.resignFirstResponder()
         presenter?.search(query)
     }
     
