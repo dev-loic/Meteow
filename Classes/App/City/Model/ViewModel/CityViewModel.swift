@@ -14,4 +14,5 @@ struct CityViewModel {
 
 enum CityCellViewModelType {
     case hoursDetails(CityHoursDetailsViewModel)
+    case moreDetails(CityMoreDetailsViewModel)
 }

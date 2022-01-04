@@ -22,6 +22,7 @@ class CityDataSource: NSObject {
     
     func registerCells(in tableView: UITableView) {
         tableView.register(cell: .class(CityHoursDetailsTableViewCell.self))
+        tableView.register(cell: .class(CityMoreDetailsTableViewCell.self))
     }
 
     func configure(with viewModel: CityViewModel) {
@@ -44,6 +45,10 @@ extension CityDataSource: UITableViewDataSource {
             let cell: CityHoursDetailsTableViewCell = tableView.dequeueCell(at: indexPath)
             cell.configure(with: viewModel)
             return cell
+        case let .moreDetails(viewModel):
+            let cell: CityMoreDetailsTableViewCell = tableView.dequeueCell(at: indexPath)
+            cell.configure(with: viewModel)
+            return cell
         }
     }
     
@@ -61,8 +66,8 @@ extension CityDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cellViewModel = viewModel.cells[indexPath.row]
         switch cellViewModel {
-        case .hoursDetails:
-            return 180.0
+        case .hoursDetails, .moreDetails:
+            return 201.0
         }
     }
 }

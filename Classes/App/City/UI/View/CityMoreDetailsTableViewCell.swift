@@ -1,5 +1,5 @@
 //
-//  CityHoursDetailsTableViewCell.swift
+//  CityMoreDetailsTableViewCell.swift
 //  Meteow
 //
 //  Created by Loïc Saillant on 03/01/2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class CityHoursDetailsTableViewCell: UITableViewCell {
+class CityMoreDetailsTableViewCell: UITableViewCell {
     
     private lazy var containerView = self.createContainerView()
     private lazy var collectionView = self.createCollectionView()
-    private lazy var dataSource = CityHoursDetailsDataSource()
+    private lazy var dataSource = CityMoreDetailsDataSource()
     private lazy var flowLayout = self.createFlowLayout()
     
     // MARK: - Lifecycle
@@ -26,9 +26,9 @@ class CityHoursDetailsTableViewCell: UITableViewCell {
         setUp()
     }
     
-    // MARK: - CityHoursDetailsTableViewCell
+    // MARK: - CityMoreDetailsTableViewCell
     
-    func configure(with viewModel: CityHoursDetailsViewModel) {
+    func configure(with viewModel: CityMoreDetailsViewModel) {
         dataSource.configure(with: viewModel)
         collectionView.reloadData()
     }
@@ -57,8 +57,7 @@ class CityHoursDetailsTableViewCell: UITableViewCell {
     
     private func createContainerView() -> UIView {
         let view = UIView()
-        view.backgroundColor = .m_lightGray
-        view.layer.cornerRadius = 12.0
+        view.backgroundColor = .clear
         return view
     }
     

@@ -6,12 +6,24 @@
 //
 
 struct RestWeatherData: Decodable {
-    let Temperature: TemperatureData
+    let Temperature: ValueData
+    let RealFeelTemperature: ValueData
     let IconPhrase: String
     let WeatherIcon: Int
     let DateTime: String
+    let Wind: WindData
+    let UVIndexText: String
 }
 
-struct TemperatureData: Decodable {
+struct ValueData: Decodable {
     let Value: Double
+}
+
+struct WindData: Decodable {
+    let Speed: ValueData
+    let Direction: DirectionData
+}
+
+struct DirectionData: Decodable {
+    let Localized: String
 }
