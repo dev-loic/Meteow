@@ -21,9 +21,13 @@ class SearchViewController: UIViewController, Alertable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-        presenter?.start()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.start()
+    }
+
     // MARK: - Private
     
     private func createDataSource() -> SearchDataSource {
@@ -72,7 +76,6 @@ extension SearchViewController: SearchDataSourceDelegate {
             self?.presenter?.selectCity(at: index)
             self?.searchBar.resignFirstResponder()
             self?.searchBar.text = ""
-            self?.presenter?.clearSearch()
         }
     }
 }
