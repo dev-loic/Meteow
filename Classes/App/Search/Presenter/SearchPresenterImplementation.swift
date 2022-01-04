@@ -17,6 +17,7 @@ class SearchPresenterImplementation: SearchPresenter {
     private weak var viewContract: SearchViewContract?
     private lazy var mapper = SearchViewModelMapper()
     private var searchResults: SearchResultsData = []
+    private var favoriteCities: [City] = []
 
     init(viewContract: SearchViewContract,
          searchRepository: SearchRepository,
@@ -29,18 +30,20 @@ class SearchPresenterImplementation: SearchPresenter {
     // MARK: - SearchPresenter
 
     func start() {
+        favoriteCities = citiesRepository.retrieveFavoriteCities()
         clearSearch()
     }
     
     func search(_ query: String) {
         searchRepository.retrieveCities(from: query) { results in
             self.searchResults = results
-            self.viewContract?.display(self.mapper.map(from: self.searchResults))
+            let viewModel = self.mapper.map(from: self.searchResults, favoriteCities: self.favoriteCities)
+            self.viewContract?.display(viewModel)
         }
     }
     
     func clearSearch() {
-        viewContract?.display(mapper.map(from: []))
+        viewContract?.display(mapper.map(from: [], favoriteCities: favoriteCities))
     }
     
     func selectCity(at index: Int) {

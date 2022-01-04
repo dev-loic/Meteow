@@ -1,20 +1,18 @@
 //
-//  SearchTableViewCell.swift
+//  FavoriteTableViewCell.swift
 //  Meteow
 //
-//  Created by Loïc Saillant on 30/12/2021.
+//  Created by Loïc Saillant on 04/01/2022.
 //
 
 import UIKit
 
-// TODO: (Loic Saillant) 2022/01/01 To rename SearchResult
-
-class SearchTableViewCell: UITableViewCell {
+class FavoriteTableViewCell: UITableViewCell {
     
     // MARK: - Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         setup()
     }
     
@@ -25,9 +23,10 @@ class SearchTableViewCell: UITableViewCell {
     
     // MARK: - SearchTableViewCell
     
-    func configure(with viewModel: SearchResultCellViewModel) {
+    func configure(with viewModel: FavoriteCellViewModel) {
         var configuration = defaultContentConfiguration()
         configuration.text = viewModel.title
+        configuration.secondaryText = viewModel.description
         contentConfiguration = configuration
     }
     

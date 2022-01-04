@@ -15,9 +15,19 @@ struct SearchViewModel {
 
 struct SearchSectionViewModel {
     let title: String
-    let cells: [SearchCellViewModel]
+    let cells: [SearchCellViewModelType]
 }
 
-struct SearchCellViewModel {
+enum SearchCellViewModelType {
+    case searchResult(SearchResultCellViewModel)
+    case favorite(FavoriteCellViewModel)
+}
+
+struct SearchResultCellViewModel {
     let title: String
+}
+
+struct FavoriteCellViewModel {
+    let title: String
+    let description: String
 }
