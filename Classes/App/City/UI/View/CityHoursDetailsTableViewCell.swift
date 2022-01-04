@@ -36,6 +36,7 @@ class CityHoursDetailsTableViewCell: UITableViewCell {
     // MARK: - Private
     
     private func setUp() {
+        backgroundColor = .m_clear
         setUpContainerView()
         setUpCollectionView()
     }
@@ -57,7 +58,7 @@ class CityHoursDetailsTableViewCell: UITableViewCell {
     
     private func createContainerView() -> UIView {
         let view = UIView()
-        view.backgroundColor = .m_lightGray
+        view.backgroundColor = .m_white
         view.layer.cornerRadius = 12.0
         return view
     }

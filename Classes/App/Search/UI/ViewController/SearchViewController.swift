@@ -33,14 +33,18 @@ class SearchViewController: UIViewController, Alertable {
     }
     
     private func setUpViews() {
+        navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.title = "search_navigation_bar_title".localized()
+        view.backgroundColor = .m_lightGray
         dataSource.registerCells(in: tableView)
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
+        tableView.backgroundColor = .m_clear
         setUpSearchBar()
     }
     
     private func setUpSearchBar() {
+        searchBar.backgroundImage = UIImage()
         searchBar.placeholder = "search_bar_placeholder".localized()
         searchBar.delegate = self
     }

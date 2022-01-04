@@ -36,6 +36,7 @@ class CityMoreDetailsTableViewCell: UITableViewCell {
     // MARK: - Private
     
     private func setUp() {
+        backgroundColor = .m_clear
         setUpContainerView()
         setUpCollectionView()
     }

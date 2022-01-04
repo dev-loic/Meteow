@@ -22,8 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         createControllers()
         
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = .m_lightGray
+        tabBarController.tabBar.standardAppearance = appearance
+        tabBarController.tabBar.scrollEdgeAppearance = appearance
+        tabBarController.tabBar.shadowImage = UIImage()
+        tabBarController.tabBar.clipsToBounds = true
+        
         tabBarController.tabBar.tintColor = .m_black
-        tabBarController.view.backgroundColor = .m_white
         tabBarController.setViewControllers(controllers, animated: false)
         
         window.rootViewController = tabBarController

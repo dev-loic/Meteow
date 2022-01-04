@@ -40,7 +40,7 @@ class CityMoreDetailsCellCollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.heightAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         view.layer.cornerRadius = 12.0
-        view.backgroundColor = .m_lightGray
+        view.backgroundColor = .m_white
         return view
     }
     
