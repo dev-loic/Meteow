@@ -33,13 +33,26 @@ extension SearchDataSource: UITableViewDataSource {
     
     // MARK: - UITableViewDataSource
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cells.count
+        return viewModel.sections[section].cells.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 38.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SearchTableViewCell = tableView.dequeueCell(at: indexPath)
-        cell.configure(with: viewModel.cells[indexPath.row])
+        let viewModel = viewModel.sections[indexPath.section].cells[indexPath.row]
+        cell.configure(with: viewModel)
         return cell
     }
 }

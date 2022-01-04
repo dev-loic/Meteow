@@ -11,6 +11,7 @@
 "search_navigation_bar_title" = "Select your favorite cities 🌇";
 "search_bar_placeholder" = "Type city name";
 "search_add_favorite_title" = "Add to favorites?";
+"search_results_section_title" = "Search results";
 
 // Cities
 "tab_cities_title" = "Cities";

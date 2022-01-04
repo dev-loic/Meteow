@@ -8,9 +8,14 @@
 import Foundation
 
 struct SearchViewModel {
-    let cells: [SearchCellViewModel]
+    let sections: [SearchSectionViewModel]
     
-    static let empty = SearchViewModel(cells: [])
+    static let empty = SearchViewModel(sections: [])
+}
+
+struct SearchSectionViewModel {
+    let title: String
+    let cells: [SearchCellViewModel]
 }
 
 struct SearchCellViewModel {
