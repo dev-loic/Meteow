@@ -12,9 +12,19 @@ typealias SearchResultsData = [SearchResultCity]
 struct SearchResultCity: Decodable {
     let key: String
     let name: String
+    let country: SearchResultCountry
     
     enum CodingKeys: String, CodingKey {
         case key = "Key"
+        case name = "LocalizedName"
+        case country = "Country"
+    }
+}
+
+struct SearchResultCountry: Decodable {
+    let name: String
+    
+    enum CodingKeys: String, CodingKey {
         case name = "LocalizedName"
     }
 }

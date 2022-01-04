@@ -21,7 +21,7 @@ class SettingsViewModelMapper {
     
     private func favoritesSection(_ cities: [City]) -> SettingsSectionViewModel? {
         guard cities.count > 0 else { return nil }
-        let cells = cities.map { SettingsCellViewModel(title: $0.name, description: nil) }
+        let cells = cities.map { SettingsCellViewModel(title: $0.name, description: $0.countryName) }
         return SettingsSectionViewModel(title: "settings_favorites_section_title".localized(), cells: cells)
     }
     

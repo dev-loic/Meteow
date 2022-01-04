@@ -10,4 +10,5 @@ import Foundation
 struct City: Codable {
     let key: String
     let name: String
+    let countryName: String
 }
