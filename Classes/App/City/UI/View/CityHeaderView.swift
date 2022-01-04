@@ -11,6 +11,7 @@ class CityHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet private weak var cityNameLabel: UILabel!
+    @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet private weak var currentTemperatureLabel: UILabel!
     @IBOutlet private weak var explanationLabel: UILabel!
     @IBOutlet private weak var weatherIconImageView: UIImageView!
@@ -26,6 +27,7 @@ class CityHeaderView: UITableViewHeaderFooterView {
 
     func configure(with viewModel: CityHeaderViewModel) {
         cityNameLabel.text = viewModel.cityName
+        countryNameLabel.text = viewModel.countryName
         currentTemperatureLabel.text = viewModel.currentTemperature
         explanationLabel.text = viewModel.explanation
         weatherIconImageView.image = viewModel.weatherIconImage?.withRenderingMode(.alwaysTemplate)
@@ -46,15 +48,19 @@ class CityHeaderView: UITableViewHeaderFooterView {
     }
     
     private func setUpLabels() {
-        [cityNameLabel, currentTemperatureLabel, explanationLabel].forEach {
+        [cityNameLabel, currentTemperatureLabel].forEach {
             $0?.textColor = .m_black
         }
+        [explanationLabel, countryNameLabel].forEach {
+            $0?.textColor = .m_gray
+        }
+        countryNameLabel.textColor = .m_gray
         cityNameLabel.font = .largeTitle
         currentTemperatureLabel.font = .extraLargeBoldTitle
     }
     
     private func setUpImageView() {
-        let configuration = UIImage.SymbolConfiguration(hierarchicalColor: .m_black)
+        let configuration = UIImage.SymbolConfiguration(hierarchicalColor: .m_gray)
         weatherIconImageView.preferredSymbolConfiguration = configuration
     }
 }
