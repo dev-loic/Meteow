@@ -14,6 +14,8 @@
 
 // Cities
 "tab_cities_title" = "Cities";
+"settings_navigation_bar_title" = "Settings 🛠";
+"settings_favorites_section_title" = "Favorites";
 
 // Settings
 "tab_settings_title" = "Settings";

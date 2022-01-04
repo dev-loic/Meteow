@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SettingsViewContract: AnyObject {
-
+    func display(_ viewModel: SettingsViewModel)
 }
