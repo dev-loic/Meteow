@@ -18,7 +18,11 @@ extension UIFont {
     }
     
     static var largeTitle: UIFont {
-        UIFont.systemFont(ofSize: 24.0)
+        UIFont.systemFont(ofSize: 32.0)
+    }
+    
+    static var text: UIFont {
+        UIFont.systemFont(ofSize: 17.0)
     }
     
     static var boldText: UIFont {
