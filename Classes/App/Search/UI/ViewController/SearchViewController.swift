@@ -15,6 +15,8 @@ class SearchViewController: UIViewController, Alertable {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     private lazy var dataSource = self.createDataSource()
+    private lazy var placeholderBackgroundLabel = self.createPlaceholderBackgroundLabel()
+    private lazy var placeholderBackgroundView = self.createPlaceholderBackgroundView()
     
     // MARK: - UIViewController
     
@@ -52,6 +54,23 @@ class SearchViewController: UIViewController, Alertable {
         searchBar.placeholder = "search_bar_placeholder".localized()
         searchBar.delegate = self
     }
+    
+    private func createPlaceholderBackgroundLabel() -> UILabel {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .text
+        label.textColor = .m_gray
+        label.numberOfLines = 0
+        return label
+    }
+    
+    private func createPlaceholderBackgroundView() -> UIView {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .m_clear
+        backgroundView.addSubview(placeholderBackgroundLabel)
+        placeholderBackgroundLabel.ad_pinToSuperview(insets: UIEdgeInsets(horizontal: 48.0, vertical: 0.0))
+        return backgroundView
+    }
 }
 
 extension SearchViewController: SearchViewContract {
@@ -59,8 +78,20 @@ extension SearchViewController: SearchViewContract {
     // MARK: - SearchViewContract
     
     func display(_ viewModel: SearchViewModel) {
+        setUpBackgroundView(viewModel.placeholderBackground)
         dataSource.configure(with: viewModel)
         tableView.reloadData()
+    }
+    
+    // MARK: - Private
+    
+    private func setUpBackgroundView(_ backgroundViewModel: PlaceholderBackgroundViewModel?) {
+        guard let backgroundViewModel = backgroundViewModel else {
+            tableView.backgroundView = nil
+            return
+        }
+        placeholderBackgroundLabel.text = backgroundViewModel.text
+        tableView.backgroundView = placeholderBackgroundView
     }
 }
 

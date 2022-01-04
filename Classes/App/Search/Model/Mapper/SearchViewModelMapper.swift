@@ -17,7 +17,10 @@ class SearchViewModelMapper {
             favoritesSection(from: favoriteCities)
         ]
         .compactMap { $0 }
-        return SearchViewModel(sections: sections)
+        return SearchViewModel(
+            placeholderBackground: placeholderBackground(sections: sections),
+            sections: sections
+        )
     }
     
     // MARK: - Private
@@ -39,5 +42,10 @@ class SearchViewModelMapper {
             .favorite(FavoriteCellViewModel(title: $0.name, description: $0.countryName))
         }
         return SearchSectionViewModel(title: "search_favorites_section_title".localized(), cells: cells)
+    }
+    
+    private func placeholderBackground(sections: [SearchSectionViewModel]) -> PlaceholderBackgroundViewModel? {
+        guard sections.count == 0 else { return nil }
+        return PlaceholderBackgroundViewModel(text: "search_placeholder_text".localized())
     }
 }

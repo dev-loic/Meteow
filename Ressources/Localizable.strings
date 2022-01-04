@@ -13,6 +13,7 @@
 "search_add_favorite_title" = "Add to favorites?";
 "search_results_section_title" = "Search Results";
 "search_favorites_section_title" = "Favorites";
+"search_placeholder_text" = "⬆️\n\nStart by adding your first favorite city using search bar above";
 
 // Cities
 "tab_cities_title" = "Cities";

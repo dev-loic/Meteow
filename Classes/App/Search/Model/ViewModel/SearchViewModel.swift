@@ -8,9 +8,14 @@
 import Foundation
 
 struct SearchViewModel {
+    let placeholderBackground: PlaceholderBackgroundViewModel?
     let sections: [SearchSectionViewModel]
     
-    static let empty = SearchViewModel(sections: [])
+    static let empty = SearchViewModel(placeholderBackground: nil, sections: [])
+}
+
+struct PlaceholderBackgroundViewModel {
+    let text: String
 }
 
 struct SearchSectionViewModel {
