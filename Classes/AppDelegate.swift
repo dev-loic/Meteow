@@ -35,16 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createControllers() -> [UINavigationController] {
         var controllers: [UINavigationController] = []
         
-        // MARK: Cities
-        
-        let citiesNavigationController = createCitiesNavigationController()
-        citiesNavigationController.tabBarItem = UITabBarItem(
-            title: "tab_cities_title".localized(),
-            image: .sun,
-            tag: 1
-        )
-        controllers.append(citiesNavigationController)
-        
         // MARK: Search
         
         let searchNavigationController = createSearchNavigationController()
@@ -103,6 +93,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
     }
+    
+    private func appendCitiesNavigationControllerIfNeededAndDisplay() {
+        guard !controllers.contains(where: { $0.viewControllers.first as? CitiesViewController != nil }) else {
+            tabBarController.selectedIndex = 0
+            return
+        }
+        let citiesNavigationController = createCitiesNavigationController()
+        citiesNavigationController.tabBarItem = UITabBarItem(
+            title: "tab_cities_title".localized(),
+            image: .sun,
+            tag: 1
+        )
+        controllers.insert(citiesNavigationController, at: 0)
+        tabBarController.setViewControllers(controllers, animated: true)
+        tabBarController.selectedIndex = 0
+    }
 }
 
 extension AppDelegate: SearchPresenterDelegate {
@@ -110,7 +116,7 @@ extension AppDelegate: SearchPresenterDelegate {
     // MARK: - SearchPresenterDelegate
     
     func searchPresenter(_ presenter: SearchPresenter, didSelect city: City) {
-        tabBarController.selectedIndex = 0
+        appendCitiesNavigationControllerIfNeededAndDisplay()
     }
 }
 
