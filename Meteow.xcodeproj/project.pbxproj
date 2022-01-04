@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006F8871F5F5523A303C0AAD /* SettingsRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AD4243AC9E84159BC0A761 /* SettingsRepositoryImplementation.swift */; };
 		073144253C8A35C019117E03 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D25C68267DC9D7EA559A84 /* SettingsViewController.swift */; };
 		082E346840AE1890DF1264C5 /* CitiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAEC0DB1CCCE5B7C2CA414A /* CitiesPresenter.swift */; };
+		13804FF5A32DD4B00EC4F047 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409DA5088A73B0575CDAF584 /* SettingsRepository.swift */; };
 		147F1D4B44C8CF57BBE88646 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD09201B692BD1698766F9E /* SearchPresenter.swift */; };
 		1522ECBFB9D850B0D55A6ADA /* Pods_Meteow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB07E3A0568D9067C15C5237 /* Pods_Meteow.framework */; };
 		261E4A8C2781AE8400E8740A /* RestWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261E4A8B2781AE8400E8740A /* RestWeatherData.swift */; };
@@ -136,6 +138,7 @@
 		31E7E96DEA9A07E7B3251E05 /* SettingsPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenterImplementation.swift; sourceTree = "<group>"; };
 		32D25C68267DC9D7EA559A84 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3D8E23D24C2FA5EC1E6A3DD9 /* CitiesViewContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CitiesViewContract.swift; sourceTree = "<group>"; };
+		409DA5088A73B0575CDAF584 /* SettingsRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		5AAEC0DB1CCCE5B7C2CA414A /* CitiesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CitiesPresenter.swift; sourceTree = "<group>"; };
 		5F318EED504FB10DBC465551 /* CityViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		7545AE69881FFD4F2206231F /* SettingsViewContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewContract.swift; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		9B834CC5C593D9A7F0CDAB04 /* SearchViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B6416679033941AABCCD46A0 /* SearchPresenterImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchPresenterImplementation.swift; sourceTree = "<group>"; };
 		BCD09201B692BD1698766F9E /* SearchPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		C9AD4243AC9E84159BC0A761 /* SettingsRepositoryImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRepositoryImplementation.swift; sourceTree = "<group>"; };
 		E449C89F500CA7A1D08CBAAF /* SearchViewContract.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchViewContract.swift; sourceTree = "<group>"; };
 		EB07E3A0568D9067C15C5237 /* Pods_Meteow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meteow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA474271B1F12D9A129994AE /* Pods-Meteow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteow.debug.xcconfig"; path = "Target Support Files/Pods-Meteow/Pods-Meteow.debug.xcconfig"; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				26C0E760277E17EF00EC78DE /* Cities */,
 				26C0E747277DC6D600EC78DE /* Search */,
 				26FFE7B127819E3E00836625 /* Weather */,
+				E5EDD7868BA0476A4762D0FC /* Settings */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				26C0E759277E177F00EC78DE /* Cities */,
 				26C0E740277DC5AD00EC78DE /* Search */,
 				26FFE7AE27819E2600836625 /* Weather */,
+				8B621D92E3DEA5DD803E70DB /* Settings */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -612,6 +618,14 @@
 			path = City;
 			sourceTree = "<group>";
 		};
+		8B621D92E3DEA5DD803E70DB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				409DA5088A73B0575CDAF584 /* SettingsRepository.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		8B97DA5B6B72187A33F04D32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +722,14 @@
 				5AD6F6E0E346CFA0FDA7DFA6 /* Model */,
 			);
 			path = Cities;
+			sourceTree = "<group>";
+		};
+		E5EDD7868BA0476A4762D0FC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C9AD4243AC9E84159BC0A761 /* SettingsRepositoryImplementation.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E604DC4429F641D6A9C90D1D /* Model */ = {
@@ -909,6 +931,8 @@
 				E066B6A370529C0D8138AD42 /* CitiesPresenterImplementation.swift in Sources */,
 				2641414D278374E500049455 /* CityMoreDetailsDataSource.swift in Sources */,
 				2641414F2783750400049455 /* CityMoreDetailsViewModel.swift in Sources */,
+				13804FF5A32DD4B00EC4F047 /* SettingsRepository.swift in Sources */,
+				006F8871F5F5523A303C0AAD /* SettingsRepositoryImplementation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

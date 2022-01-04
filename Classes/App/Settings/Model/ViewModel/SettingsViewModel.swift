@@ -18,4 +18,5 @@ struct SettingsSectionViewModel {
 
 struct SettingsCellViewModel {
     let title: String
+    let description: String?
 }
