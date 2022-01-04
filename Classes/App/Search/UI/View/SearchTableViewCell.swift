@@ -5,12 +5,7 @@
 //  Created by Loïc Saillant on 30/12/2021.
 //
 
-import Foundation
 import UIKit
-
-protocol SearchTableViewCellDelegate: AnyObject {
-    // TODO: (Loic Saillant) To complete
-}
 
 class SearchTableViewCell: UITableViewCell {
     
@@ -29,7 +24,9 @@ class SearchTableViewCell: UITableViewCell {
     // MARK: - SearchTableViewCell
     
     func configure(with viewModel: SearchCellViewModel) {
-        textLabel?.text = viewModel.title
+        var configuration = defaultContentConfiguration()
+        configuration.text = viewModel.title
+        contentConfiguration = configuration
     }
     
     // MARK: - Private
