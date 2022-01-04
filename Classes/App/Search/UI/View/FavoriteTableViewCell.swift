@@ -21,7 +21,7 @@ class FavoriteTableViewCell: UITableViewCell {
         setup()
     }
     
-    // MARK: - SearchTableViewCell
+    // MARK: - FavoriteTableViewCell
     
     func configure(with viewModel: FavoriteCellViewModel) {
         var configuration = defaultContentConfiguration()

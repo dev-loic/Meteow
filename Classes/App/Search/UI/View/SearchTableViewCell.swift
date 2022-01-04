@@ -1,5 +1,5 @@
 //
-//  SearchTableViewCell.swift
+//  SearchResultTableViewCell.swift
 //  Meteow
 //
 //  Created by Loïc Saillant on 30/12/2021.
@@ -7,9 +7,7 @@
 
 import UIKit
 
-// TODO: (Loic Saillant) 2022/01/01 To rename SearchResult
-
-class SearchTableViewCell: UITableViewCell {
+class SearchResultTableViewCell: UITableViewCell {
     
     // MARK: - Lifecycle
     
@@ -23,7 +21,7 @@ class SearchTableViewCell: UITableViewCell {
         setup()
     }
     
-    // MARK: - SearchTableViewCell
+    // MARK: - SearchResultTableViewCell
     
     func configure(with viewModel: SearchResultCellViewModel) {
         var configuration = defaultContentConfiguration()

@@ -21,7 +21,7 @@ class SearchDataSource: NSObject {
     // MARK: - SearchDataSource
 
     func registerCells(in tableView: UITableView) {
-        tableView.register(cell: .class(SearchTableViewCell.self))
+        tableView.register(cell: .class(SearchResultTableViewCell.self))
         tableView.register(cell: .class(FavoriteTableViewCell.self))
     }
 
@@ -54,7 +54,7 @@ extension SearchDataSource: UITableViewDataSource {
         let viewModel = viewModel.sections[indexPath.section].cells[indexPath.row]
         switch viewModel {
         case let .searchResult(cellViewModel):
-            let cell: SearchTableViewCell = tableView.dequeueCell(at: indexPath)
+            let cell: SearchResultTableViewCell = tableView.dequeueCell(at: indexPath)
             cell.configure(with: cellViewModel)
             return cell
         case let .favorite(cellViewModel):
