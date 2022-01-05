@@ -15,6 +15,7 @@ protocol SearchPresenterDelegate: AnyObject {
 
 protocol SearchPresenter {
     func start()
+    func refresh()
     func search(_ query: String)
     func clearSearch()
     func selectCity(at index: Int)

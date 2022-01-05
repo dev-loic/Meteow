@@ -23,11 +23,12 @@ class SearchViewController: UIViewController, Alertable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+        presenter?.start()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.start()
+        presenter?.refresh()
     }
 
     // MARK: - Private

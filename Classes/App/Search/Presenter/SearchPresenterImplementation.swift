@@ -34,6 +34,10 @@ class SearchPresenterImplementation: SearchPresenter {
         clearSearch()
     }
     
+    func refresh() {
+        refreshFavorites()
+    }
+    
     func search(_ query: String) {
         searchRepository.retrieveCities(from: query) { results in
             self.searchResults = results
@@ -43,7 +47,8 @@ class SearchPresenterImplementation: SearchPresenter {
     }
     
     func clearSearch() {
-        viewContract?.display(mapper.map(from: [], favoriteCities: favoriteCities))
+        searchResults = []
+        viewContract?.display(mapper.map(from: searchResults, favoriteCities: favoriteCities))
     }
     
     func selectCity(at index: Int) {
@@ -55,15 +60,24 @@ class SearchPresenterImplementation: SearchPresenter {
             countryName: citySearchResult.country.name
         )
         citiesRepository.addFavorite(city)
+        clearSearch()
         delegate?.searchPresenter(self, didSelect: city)
     }
     
     func removeFavorite(at index: Int) {
         let favoriteCity = favoriteCities[index]
         citiesRepository.removeFavorite(favoriteCity)
-        start()
+        refreshFavorites()
         if favoriteCities.count == 0 {
             delegate?.searchPresenterDidRemoveAllCities(self)
         }
+    }
+    
+    // MARK: - Private
+    
+    private func refreshFavorites() {
+        favoriteCities = citiesRepository.retrieveFavoriteCities()
+        let viewModel = mapper.map(from: searchResults, favoriteCities: favoriteCities)
+        viewContract?.display(viewModel)
     }
 }
