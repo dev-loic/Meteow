@@ -129,8 +129,7 @@ extension SearchViewController: UISearchBarDelegate {
         // ???: (Loic Saillant) 2021/12/30 I choose not to send a request at each letter,
         // like a true autocomplete because I am limited to 50 calls/day with free plan
         guard let query = searchBar.text else { return }
-        searchBar.resignFirstResponder()
-        presenter?.search(query)
+        presenter?.search(query) { searchBar.resignFirstResponder() }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

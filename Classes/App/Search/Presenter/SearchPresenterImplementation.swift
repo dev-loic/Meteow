@@ -38,8 +38,9 @@ class SearchPresenterImplementation: SearchPresenter {
         refreshFavorites()
     }
     
-    func search(_ query: String) {
+    func search(_ query: String, completion: @escaping () -> Void) {
         searchRepository.retrieveCities(from: query) { results in
+            completion()
             self.searchResults = results
             let viewModel = self.mapper.map(from: self.searchResults, favoriteCities: self.favoriteCities)
             self.viewContract?.display(viewModel)
