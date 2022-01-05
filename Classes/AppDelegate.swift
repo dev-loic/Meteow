@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let searchNavigationController = createSearchNavigationController()
         searchNavigationController.tabBarItem = UITabBarItem(
             title: "tab_search_title".localized(),
-            image: .search,
+            image: .star,
             tag: 2
         )
         controllers.append(searchNavigationController)

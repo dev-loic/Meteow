@@ -10,8 +10,8 @@ import UIKit
 
 extension UIImage {
     
-    class var search: UIImage? {
-        return UIImage(systemName: "magnifyingglass")
+    class var star: UIImage? {
+        return UIImage(systemName: "star.fill")
     }
     
     static var settings: UIImage?  {
