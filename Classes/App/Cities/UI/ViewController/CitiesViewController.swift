@@ -43,6 +43,7 @@ class CitiesViewController: UIViewController {
         pageViewController.view.frame = view.frame
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
+        pageViewController.view.backgroundColor = .m_lightGray
     }
 }
 
