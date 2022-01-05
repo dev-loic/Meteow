@@ -30,6 +30,23 @@ class CityViewModelMapper {
         )
     }
     
+    func mapPlaceholder(city: City) -> CityViewModel {
+        let header = CityHeaderViewModel(
+            cityName: city.name,
+            countryName: city.countryName,
+            currentTemperature: String(format: "celsius_format".localized(), "-"),
+            explanation: "-",
+            weatherIconImage: .weatherImage(.sunny)
+        )
+        return CityViewModel(
+            header: header,
+            cells: [
+                .hoursDetails(.empty),
+                .moreDetails(placeholderMoreDetailsViewModel())
+            ]
+        )
+    }
+    
     // MARK: - Private
     
     private func hoursDetailsViewModel(data: [WeatherData]) -> CityHoursDetailsViewModel {
@@ -61,6 +78,17 @@ class CityViewModelMapper {
         return CityMoreDetailsViewModel(cells: cells)
     }
     
+    private func placeholderMoreDetailsViewModel() -> CityMoreDetailsViewModel {
+        let moreDetails: [CityMoreDetailsType] = [
+            .realFeelTemperature,
+            .windSpeed,
+            .windDirection,
+            .uvIndex
+        ]
+        let cells = moreDetails.map { placeholderCityMoreDetailsCellViewModel(for: $0) }
+        return CityMoreDetailsViewModel(cells: cells)
+    }
+    
     private func cityMoreDetailsCellViewModel(for type: CityMoreDetailsType,
                                               _ data: WeatherData) -> CityMoreDetailsCellViewModel {
         let value: String
@@ -73,6 +101,21 @@ class CityViewModelMapper {
             value = data.wind.direction
         case .uvIndex:
             value = data.uvIndex
+        }
+        return CityMoreDetailsCellViewModel(title: title(for: type), value: value)
+    }
+    
+    private func placeholderCityMoreDetailsCellViewModel(for type: CityMoreDetailsType) -> CityMoreDetailsCellViewModel {
+        let value: String
+        switch type {
+        case .realFeelTemperature:
+            value = String(format: "celsius_format".localized(), "-")
+        case .windSpeed:
+            value = String(format: "kmh_format".localized(), "-")
+        case .windDirection:
+            value = "-"
+        case .uvIndex:
+            value = "-"
         }
         return CityMoreDetailsCellViewModel(title: title(for: type), value: value)
     }

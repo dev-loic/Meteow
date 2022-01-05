@@ -24,7 +24,10 @@ class CityPresenterImplementation: CityPresenter {
     // MARK: - CityPresenter
 
     func start() {
+        let viewModel = self.mapper.mapPlaceholder(city: city)
+        viewContract?.display(viewModel)
         weatherRepository.retrieveData(cityKey: city.key) { data in
+            guard data.count > 0 else { return }
             let viewModel = self.mapper.map(city: self.city, data: data)
             self.viewContract?.display(viewModel)
         }
