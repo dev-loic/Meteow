@@ -15,6 +15,7 @@ protocol Alertable {
 enum AlertHandlerActionType {
     case cancel
     case confirm
+    case delete
 }
 
 extension Alertable where Self: UIViewController {
@@ -25,6 +26,8 @@ extension Alertable where Self: UIViewController {
         switch viewModelType {
         case let .cancelable(viewModel):
             presentCancelableAlert(viewModel, completion: completion)
+        case let .destructive(viewModel):
+            presentDestructiveAlert(viewModel, completion: completion)
         }
     }
     
@@ -41,6 +44,26 @@ extension Alertable where Self: UIViewController {
             title: "alert_confirm_button_title".localized(),
             style: .default,
             handler: { _ in completion(.confirm) }
+        )
+        presentAlert(
+            title: viewModel.title,
+            message: viewModel.message,
+            actions: [cancelAction, confirmAction],
+            completion: nil
+        )
+    }
+    
+    private func presentDestructiveAlert(_ viewModel: AlertViewModel,
+                                         completion: @escaping (AlertHandlerActionType) -> Void) {
+        let cancelAction = UIAlertAction(
+            title: "alert_cancel_button_title".localized(),
+            style: .cancel,
+            handler: { _ in completion(.cancel) }
+        )
+        let confirmAction = UIAlertAction(
+            title: "alert_delete_button_title".localized(),
+            style: .destructive,
+            handler: { _ in completion(.delete) }
         )
         presentAlert(
             title: viewModel.title,

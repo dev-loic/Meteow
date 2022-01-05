@@ -12,7 +12,7 @@ import UIKit
 class CityViewController: UIViewController {
 
     var presenter: CityPresenter?
-    private lazy var tableView = UITableView()
+    private lazy var tableView = self.createTableView()
     private lazy var dataSource = CityDataSource()
 
     // MARK: - UIViewController
@@ -26,13 +26,19 @@ class CityViewController: UIViewController {
     // MARK: - Private
     
     private func setUpViews() {
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
+        tableView.backgroundColor = .m_lightGray
         view.addSubview(tableView)
         tableView.ad_pinToSuperview()
         tableView.separatorStyle = .none
         dataSource.registerHeader(in: tableView)
         dataSource.registerCells(in: tableView)
+    }
+    
+    private func createTableView() -> UITableView {
+        let tableView = UITableView()
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        return tableView
     }
 }
 

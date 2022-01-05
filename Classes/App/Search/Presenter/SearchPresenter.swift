@@ -10,11 +10,14 @@ import Foundation
 
 protocol SearchPresenterDelegate: AnyObject {
     func searchPresenter(_ presenter: SearchPresenter, didSelect city: City)
+    func searchPresenterDidRemoveAllCities(_ presenter: SearchPresenter)
 }
 
 protocol SearchPresenter {
     func start()
-    func search(_ query: String)
+    func refresh()
+    func search(_ query: String, completion: @escaping () -> Void)
     func clearSearch()
     func selectCity(at index: Int)
+    func removeFavorite(at index: Int)
 }

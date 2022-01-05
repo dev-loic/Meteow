@@ -22,8 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         createControllers()
         
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = .m_lightGray
+        tabBarController.tabBar.standardAppearance = appearance
+        tabBarController.tabBar.scrollEdgeAppearance = appearance
+        tabBarController.tabBar.shadowImage = UIImage()
+        tabBarController.tabBar.clipsToBounds = true
+        
         tabBarController.tabBar.tintColor = .m_black
-        tabBarController.view.backgroundColor = .m_white
         tabBarController.setViewControllers(controllers, animated: false)
         
         window.rootViewController = tabBarController
@@ -43,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let searchNavigationController = createSearchNavigationController()
         searchNavigationController.tabBarItem = UITabBarItem(
             title: "tab_search_title".localized(),
-            image: .search,
+            image: .star,
             tag: 2
         )
         controllers.append(searchNavigationController)
@@ -95,14 +101,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createSettingsNavigationController() -> UINavigationController {
         let navigationController = UINavigationController()
         let viewController = SettingsViewController()
-        let citiesRepository = CitiesRepositoryImplementation()
         let settingsRepository = SettingsRepositoryImplementation()
         let presenter = SettingsPresenterImplementation(
             viewContract: viewController,
-            citiesRepository: citiesRepository,
             settingsRepository: settingsRepository
         )
-        presenter.delegate = self
         viewController.presenter = presenter
         navigationController.pushViewController(viewController, animated: false)
         return navigationController
@@ -123,7 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.setViewControllers(controllers, animated: true)
         tabBarController.selectedIndex = 0
     }
-    
+
     private func removeCitiesNavigationController() {
         createControllers()
         tabBarController.setViewControllers(controllers, animated: true)
@@ -138,13 +141,8 @@ extension AppDelegate: SearchPresenterDelegate {
     func searchPresenter(_ presenter: SearchPresenter, didSelect city: City) {
         appendCitiesNavigationControllerIfNeededAndDisplay()
     }
-}
-
-extension AppDelegate: SettingsPresenterDelegate {
     
-    // MARK: - SettingsPresenterDelegate
-    
-    func settingsPresenterDidRemoveAllCities(_ presenter: SettingsPresenter) {
+    func searchPresenterDidRemoveAllCities(_ presenter: SearchPresenter) {
         removeCitiesNavigationController()
     }
 }

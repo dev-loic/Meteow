@@ -52,11 +52,15 @@ class CityHeaderView: UITableViewHeaderFooterView {
             $0?.textColor = .m_black
         }
         [explanationLabel, countryNameLabel].forEach {
+            $0?.font = .text
             $0?.textColor = .m_gray
         }
         countryNameLabel.textColor = .m_gray
         cityNameLabel.font = .largeTitle
-        currentTemperatureLabel.font = .extraLargeBoldTitle
+        cityNameLabel.numberOfLines = 1
+        cityNameLabel.minimumScaleFactor = 0.5
+        cityNameLabel.adjustsFontSizeToFitWidth = true
+        currentTemperatureLabel.font = .bigTitle
     }
     
     private func setUpImageView() {

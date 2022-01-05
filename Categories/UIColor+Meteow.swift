@@ -23,7 +23,7 @@ extension UIColor {
     }
     
     class var m_lightGray: UIColor {
-        return UIColor(white: 0.84, alpha: 1.0)
+        return .systemGroupedBackground
     }
     
     class var m_white: UIColor {

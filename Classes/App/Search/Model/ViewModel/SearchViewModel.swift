@@ -8,11 +8,31 @@
 import Foundation
 
 struct SearchViewModel {
-    let cells: [SearchCellViewModel]
+    let placeholderBackground: PlaceholderBackgroundViewModel?
+    let sections: [SearchSectionViewModel]
     
-    static let empty = SearchViewModel(cells: [])
+    static let empty = SearchViewModel(placeholderBackground: nil, sections: [])
 }
 
-struct SearchCellViewModel {
+struct PlaceholderBackgroundViewModel {
+    let text: String
+}
+
+struct SearchSectionViewModel {
     let title: String
+    let cells: [SearchCellViewModelType]
+}
+
+enum SearchCellViewModelType {
+    case searchResult(SearchResultCellViewModel)
+    case favorite(FavoriteCellViewModel)
+}
+
+struct SearchResultCellViewModel {
+    let title: String
+}
+
+struct FavoriteCellViewModel {
+    let title: String
+    let description: String
 }

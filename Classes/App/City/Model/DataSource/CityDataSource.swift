@@ -66,8 +66,10 @@ extension CityDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let cellViewModel = viewModel.cells[indexPath.row]
         switch cellViewModel {
-        case .hoursDetails, .moreDetails:
-            return 201.0
+        case .hoursDetails:
+            return 160.0
+        case .moreDetails:
+            return 290.0
         }
     }
 }

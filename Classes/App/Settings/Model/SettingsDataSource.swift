@@ -7,13 +7,7 @@
 
 import UIKit
 
-protocol SettingsDataSourceDelegate: AnyObject {
-    func settingsDataSource(_ dataSource: SettingsDataSource, didCommitDeleteAt indexPath: IndexPath)
-}
-
 class SettingsDataSource: NSObject {
-
-    weak var delegate: SettingsDataSourceDelegate?
 
     private var viewModel: SettingsViewModel = .empty
 
@@ -62,10 +56,5 @@ extension SettingsDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 48.0
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard case .delete = editingStyle else { return }
-        delegate?.settingsDataSource(self, didCommitDeleteAt: indexPath)
     }
 }

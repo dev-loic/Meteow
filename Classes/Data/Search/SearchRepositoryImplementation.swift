@@ -16,7 +16,7 @@ class SearchRepositoryImplementation: SearchRepository {
                         completion: @escaping (SearchResultsData) -> Void) {
         let baseURL = TargetSettings.baseURL
         let apiKey = TargetSettings.accuWeatherApiKey
-        let request = AF.request("\(baseURL)/locations/v1/cities/autocomplete?apikey=\(apiKey)&q=\(queryString)")
+        let request = AF.request("\(baseURL)/locations/v1/cities/autocomplete?apikey=\(apiKey)&q=\(queryString.queryized)")
         request.responseDecodable { (response: DataResponse<SearchResultsData, AFError>) in
             switch (response.result) {
             case let .success(data):
