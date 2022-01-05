@@ -60,7 +60,7 @@ class CityHeaderView: UITableViewHeaderFooterView {
         cityNameLabel.numberOfLines = 1
         cityNameLabel.minimumScaleFactor = 0.5
         cityNameLabel.adjustsFontSizeToFitWidth = true
-        currentTemperatureLabel.font = .extraLargeBoldTitle
+        currentTemperatureLabel.font = .bigTitle
     }
     
     private func setUpImageView() {

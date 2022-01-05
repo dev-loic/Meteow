@@ -37,13 +37,14 @@ class CityMoreDetailsTableViewCell: UITableViewCell {
     
     private func setUp() {
         backgroundColor = .m_clear
+        selectionStyle = .none
         setUpContainerView()
         setUpCollectionView()
     }
     
     private func setUpContainerView() {
         contentView.addSubview(containerView)
-        containerView.ad_pinToSuperview(insets: UIEdgeInsets(horizontal: 24.0, vertical: 16.0))
+        containerView.ad_pinToSuperview(insets: UIEdgeInsets(horizontal: 24.0, vertical: 8.0))
     }
     
     private func setUpCollectionView() {
@@ -72,8 +73,7 @@ class CityMoreDetailsTableViewCell: UITableViewCell {
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumInteritemSpacing = .greatestFiniteMagnitude
+        flowLayout.scrollDirection = .vertical
         return flowLayout
     }
 }

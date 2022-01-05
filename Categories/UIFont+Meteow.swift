@@ -9,10 +9,6 @@ import UIKit
 
 extension UIFont {
     
-    static var extraLargeBoldTitle: UIFont {
-        return UIFont.systemFont(ofSize: 64.0)
-    }
-    
     static var bigTitle: UIFont {
         UIFont.systemFont(ofSize: 56.0)
     }

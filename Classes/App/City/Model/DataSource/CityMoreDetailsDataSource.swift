@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum Constants {
+    static let interitemSpacing: CGFloat = 16.0
+    static let  nbElementsPerRow: CGFloat = 2.0
+}
+
 class CityMoreDetailsDataSource: NSObject {
 
     private var viewModel: CityMoreDetailsViewModel = .empty
@@ -50,7 +55,8 @@ extension CityMoreDetailsDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = 169.0
+        let fittingWidth = collectionView.m_fittingWidth(with: collectionViewLayout, sizeForItemAt: indexPath)
+        let width = (fittingWidth - Constants.interitemSpacing) / Constants.nbElementsPerRow
         let cellViewModel = viewModel.cells[indexPath.row]
         sizingCell.prepareForReuse()
         sizingCell.configure(with: cellViewModel)
@@ -61,6 +67,12 @@ extension CityMoreDetailsDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 16.0
+        return Constants.interitemSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return Constants.interitemSpacing
     }
 }
